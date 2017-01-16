@@ -72,44 +72,44 @@ namespace Zavtra
 			// aapt resource value: 0x7f050003
 			public const int btnContinue = 2131034115;
 			
+			// aapt resource value: 0x7f05000b
+			public const int btnFarm = 2131034123;
+			
+			// aapt resource value: 0x7f05000c
+			public const int btnLumberjack = 2131034124;
+			
+			// aapt resource value: 0x7f050012
+			public const int btnNewFarm = 2131034130;
+			
 			// aapt resource value: 0x7f050001
 			public const int btnNewGame = 2131034113;
 			
-			// aapt resource value: 0x7f050009
-			public const int button1 = 2131034121;
-			
 			// aapt resource value: 0x7f050013
-			public const int button10 = 2131034131;
+			public const int btnNewLumberjack = 2131034131;
 			
 			// aapt resource value: 0x7f050014
-			public const int button11 = 2131034132;
+			public const int btnNewQuarry = 2131034132;
+			
+			// aapt resource value: 0x7f050011
+			public const int btnNewResidence = 2131034129;
 			
 			// aapt resource value: 0x7f050015
-			public const int button12 = 2131034133;
-			
-			// aapt resource value: 0x7f05000a
-			public const int button2 = 2131034122;
-			
-			// aapt resource value: 0x7f05000b
-			public const int button3 = 2131034123;
-			
-			// aapt resource value: 0x7f05000c
-			public const int button4 = 2131034124;
+			public const int btnNewStorehouse = 2131034133;
 			
 			// aapt resource value: 0x7f05000d
-			public const int button5 = 2131034125;
+			public const int btnQuarry = 2131034125;
+			
+			// aapt resource value: 0x7f05000a
+			public const int btnResidence = 2131034122;
 			
 			// aapt resource value: 0x7f05000e
-			public const int button6 = 2131034126;
+			public const int btnStorehouse = 2131034126;
+			
+			// aapt resource value: 0x7f050009
+			public const int btnTownhall = 2131034121;
 			
 			// aapt resource value: 0x7f050010
 			public const int button7 = 2131034128;
-			
-			// aapt resource value: 0x7f050011
-			public const int button8 = 2131034129;
-			
-			// aapt resource value: 0x7f050012
-			public const int button9 = 2131034130;
 			
 			// aapt resource value: 0x7f050006
 			public const int gridLayout1 = 2131034118;

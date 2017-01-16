@@ -21,89 +21,92 @@
         p1:layout_marginTop="0.0dp">
         <LinearLayout
             p1:orientation="vertical"
-            p1:layout_width="256.0dp"
+            p1:layout_width="250dp"
             p1:layout_height="match_parent"
             p1:weightSum="6"
             p1:id="@+id/linearLayout3">
             <Button
-                p1:text="Button"
+                p1:text="Stadtzentrum"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button1" />
+                p1:id="@+id/btnTownhall" />
             <Button
-                p1:text="Button"
+                p1:text="Wohnhaus"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button2" />
+                p1:id="@+id/btnResidence" />
             <Button
-                p1:text="Button"
+                p1:text="Farm"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button3" />
+                p1:id="@+id/btnFarm" />
             <Button
-                p1:text="Button"
+                p1:text="Holzfällerhütte"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button4" />
+                p1:id="@+id/btnLumberjack" />
             <Button
-                p1:text="Button"
+                p1:text="Steinbruch"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button5" />
+                p1:id="@+id/btnQuarry" />
             <Button
-                p1:text="Button"
+                p1:text="Lagerhaus"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button6" />
+                p1:id="@+id/btnStorehouse" />
         </LinearLayout>
         <LinearLayout
             p1:orientation="vertical"
-            p1:layout_width="109.5dp"
+            p1:layout_width="100dp"
             p1:layout_height="match_parent"
+            p1:gravity="right"
             p1:weightSum="6"
             p1:id="@+id/linearLayout4">
             <Button
-                p1:text="Button"
+                p1:text="Neues Gebäude"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button7" />
+                p1:visibility="visible"
+                p1:id="@+id/button7"
+                p1:enabled="false" />
             <Button
-                p1:text="Button"
+                p1:text="Neues Gebäude"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button8" />
+                p1:id="@+id/btnNewResidence" />
             <Button
-                p1:text="Button"
+                p1:text="Neues Gebäude"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button9" />
+                p1:id="@+id/btnNewFarm" />
             <Button
-                p1:text="Button"
+                p1:text="Neues Gebäude"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button10" />
+                p1:id="@+id/btnNewLumberjack" />
             <Button
-                p1:text="Button"
+                p1:text="Neues Gebäude"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button11" />
+                p1:id="@+id/btnNewQuarry" />
             <Button
-                p1:text="Button"
+                p1:text="Neues Gebäude"
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/button12" />
+                p1:id="@+id/btnNewStorehouse" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
