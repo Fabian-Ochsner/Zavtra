@@ -51,10 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building.cs" />
+    <Compile Include="Farm.cs" />
+    <Compile Include="LumberjackHut.cs" />
+    <Compile Include="Quarry.cs" />
+    <Compile Include="Residence.cs" />
+    <Compile Include="Storehouse.cs" />
+    <Compile Include="Structure.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ressource.cs" />
     <Compile Include="TownActivity.cs" />
+    <Compile Include="Townhall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />

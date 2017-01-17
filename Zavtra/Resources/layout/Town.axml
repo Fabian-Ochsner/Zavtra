@@ -82,7 +82,7 @@
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:id="@+id/btnLumberjack" />
+                p1:id="@+id/btnLumberjackHut" />
             <Button
                 p1:text="Steinbruch"
                 p1:layout_width="match_parent"

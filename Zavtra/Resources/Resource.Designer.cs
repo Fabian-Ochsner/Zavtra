@@ -76,7 +76,7 @@ namespace Zavtra
 			public const int btnFarm = 2131034128;
 			
 			// aapt resource value: 0x7f050011
-			public const int btnLumberjack = 2131034129;
+			public const int btnLumberjackHut = 2131034129;
 			
 			// aapt resource value: 0x7f050017
 			public const int btnNewFarm = 2131034135;
