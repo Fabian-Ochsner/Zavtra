@@ -12,13 +12,13 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    class Building : Ressource
+    public enum Buildings
     {
-        public Building()
-        {
-            ressource = Ressources.building;
-            maxRessource = 5;
-            currentRessource = 3;
-        }
+        townhall,
+        residence,
+        farm,
+        quarry,
+        lumberjackHut,
+        storehouse
     }
 }

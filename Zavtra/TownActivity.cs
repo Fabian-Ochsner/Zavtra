@@ -22,6 +22,7 @@ namespace Zavtra
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Town);
             // Create your application here
+            Town zavtra = new Town();
         }
     }
 }

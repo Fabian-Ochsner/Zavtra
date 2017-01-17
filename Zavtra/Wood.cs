@@ -12,18 +12,13 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    class LumberjackHut : Structure
+    class Wood : Ressource
     {
-        public LumberjackHut()
+        public Wood()
         {
-            level = 1;
-            building = Buildings.lumberjackHut;
-            costWood = 2000;
-            costStone = 5000;
             ressource = Ressources.wood;
-            worker = 0;
-            minWorker = 0;
-            maxWorker = 5;
+            maxRessource = 20000;
+            currentRessource = 10000;
         }
     }
 }

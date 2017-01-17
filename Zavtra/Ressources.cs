@@ -14,6 +14,9 @@ namespace Zavtra
 {
     public enum Ressources
     {
+        building,
+        worker,
+        storage,
         food,
         wood,
         stone

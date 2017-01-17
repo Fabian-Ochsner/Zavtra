@@ -14,13 +14,13 @@ namespace Zavtra
 {
     abstract class Structure
     {
-        private int level { get; set; }
-        private Building building { get; set; } 
-        private double costWood { get; set; }
-        private double costStone { get; set; }
-        private Ressources ressource { get; set; }
-        private int worker { get; set; }
-        private int minWorker { get; set; }
-        private int maxWorker { get; set; }
+        public int level { get; protected set; }
+        public Buildings building { get; protected set; }
+        public double costWood { get; protected set; }
+        public double costStone { get; protected set; }
+        public Ressources ressource { get; protected set; }
+        public int worker { get; protected set; }
+        public int minWorker { get; protected set; }
+        public int maxWorker { get; protected set; }
     }
 }

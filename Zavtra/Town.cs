@@ -14,7 +14,13 @@ namespace Zavtra
 {
     class Town
     {
-        private List<Structure> structures { get; set; }
-        private List<Ressource> ressource { get; set; }
+        public List<Structure> structures { get; private set; }
+        public List<Ressource> ressource { get; private set; }
+
+
+        public Town()
+        {
+            structures.Add(new Townhall());
+        }
     }
 }

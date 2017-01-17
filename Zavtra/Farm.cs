@@ -14,6 +14,16 @@ namespace Zavtra
 {
     class Farm : Structure
     {
-
+        public Farm()
+        {
+            level = 1;
+            building = Buildings.quarry;
+            costWood = 5000;
+            costStone = 5000;
+            ressource = Ressources.food;
+            worker = 0;
+            minWorker = 0;
+            maxWorker = 5;
+        }
     }
 }

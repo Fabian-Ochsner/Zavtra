@@ -51,12 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildings.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="Farm.cs" />
+    <Compile Include="Food.cs" />
     <Compile Include="LumberjackHut.cs" />
     <Compile Include="Quarry.cs" />
     <Compile Include="Residence.cs" />
     <Compile Include="Ressource.cs" />
+    <Compile Include="Stone.cs" />
     <Compile Include="Storehouse.cs" />
     <Compile Include="Structure.cs" />
     <Compile Include="MainActivity.cs" />
@@ -66,6 +69,8 @@
     <Compile Include="Town.cs" />
     <Compile Include="TownActivity.cs" />
     <Compile Include="Townhall.cs" />
+    <Compile Include="Wood.cs" />
+    <Compile Include="Worker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />

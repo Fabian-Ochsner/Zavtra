@@ -14,6 +14,16 @@ namespace Zavtra
 {
     class Townhall : Structure
     {
-
+        public Townhall()
+        {
+            level = 1;
+            building = Buildings.townhall;
+            costWood = 20000;
+            costStone = 20000;
+            ressource = Ressources.building;
+            worker = 1;
+            minWorker = 1;
+            maxWorker = 1;
+        }
     }
 }
