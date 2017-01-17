@@ -9,9 +9,43 @@
         p1:minWidth="25px"
         p1:minHeight="25px"
         p1:layout_width="match_parent"
-        p1:layout_height="150dp"
+        p1:layout_height="60dp"
         p1:layout_weight="1"
-        p1:id="@+id/gridLayout1" />
+        p1:columnCount="3"
+        p1:rowCount="2"
+        p1:id="@+id/gridLayout1">
+        <TextView
+            p1:text="Food"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_row="0"
+            p1:layout_column="0"
+            p1:id="@+id/txtFood" />
+        <TextView
+            p1:text="Wood"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_row="0"
+            p1:layout_column="1"
+            p1:id="@+id/txtWood" />
+        <TextView
+            p1:text="Stone"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_row="0"
+            p1:layout_column="2"
+            p1:id="@+id/txtStone" />
+        <TextView
+            p1:text="Workforce"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_row="1"
+            p1:layout_column="0"
+            p1:layout_columnSpan="2"
+            p1:id="@+id/txtWorkforce" />
+        <TextView
+            p1:text="Buildings"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_row="1"
+            p1:layout_column="2"
+            p1:id="@+id/txtBuilding" />
+    </GridLayout>
     <LinearLayout
         p1:orientation="horizontal"
         p1:layout_width="match_parent"
