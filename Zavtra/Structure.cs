@@ -18,7 +18,9 @@ namespace Zavtra
         private Building building { get; set; } 
         private double costWood { get; set; }
         private double costStone { get; set; }
-        private Ressource ressource { get; set; }
+        private Ressources ressource { get; set; }
         private int worker { get; set; }
+        private int minWorker { get; set; }
+        private int maxWorker { get; set; }
     }
 }

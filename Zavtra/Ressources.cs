@@ -12,10 +12,10 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    abstract class Ressource
+    public enum Ressources
     {
-        private Ressources ressource { get; set; }
-        private double maxRessource { get; set; }
-        private double currentRessource { get; set; }
+        food,
+        wood,
+        stone
     }
 }
