@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    public class Wood : Ressources
+    public class Wood : Ressource
     {
         public Wood()
         {

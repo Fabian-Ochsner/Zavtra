@@ -15,7 +15,7 @@ namespace Zavtra
     class Town
     {
         public List<Structure> structures { get; private set; }
-        public List<Ressources> ressource { get; private set; }
+        public List<Ressource> ressource { get; private set; }
 
 
         public Town()
@@ -25,7 +25,7 @@ namespace Zavtra
             structures.Add(new Residence());
             structures.Add(new Storehouse());
 
-            ressource = new List<Ressources>();
+            ressource = new List<Ressource>();
             ressource.Add(new Building());
             ressource.Add(new Worker());
             ressource.Add(new Food());
@@ -33,12 +33,12 @@ namespace Zavtra
             ressource.Add(new Stone());
         }
 
-        public Town(List<Structure> _structure, List<Ressources> _ressource)
+        public Town(List<Structure> _structure, List<Ressource> _ressource)
         {
             structures = new List<Structure>();
             structures = _structure;
 
-            ressource = new List<Ressources>();
+            ressource = new List<Ressource>();
             ressource = _ressource;
         }
 

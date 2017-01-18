@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    public class Food : Ressources
+    public class Food : Ressource
     {
         public Food()
         {

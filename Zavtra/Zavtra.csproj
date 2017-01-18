@@ -58,7 +58,7 @@
     <Compile Include="LumberjackHut.cs" />
     <Compile Include="Quarry.cs" />
     <Compile Include="Residence.cs" />
-    <Compile Include="Ressources.cs" />
+    <Compile Include="Ressource.cs" />
     <Compile Include="Stone.cs" />
     <Compile Include="Storehouse.cs" />
     <Compile Include="Structure.cs" />
