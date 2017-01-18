@@ -32,5 +32,52 @@ namespace Zavtra
             ressource.Add(new Wood());
             ressource.Add(new Stone());
         }
+
+        public void BuildStructure(Buildings type)
+        {
+            switch (type)
+            {
+                case Buildings.residence:
+                    BuildResidence();
+                    break;
+                case Buildings.farm:
+                    BuildFarm();
+                    break;
+                case Buildings.quarry:
+                    BuildQuarry();
+                    break;
+                case Buildings.lumberjackHut:
+                    BuildLumberjack();
+                    break;
+                case Buildings.storehouse:
+                    BuildStorehouse();
+                    break;
+                default:
+
+                    break;
+            }
+        }
+
+
+        private void BuildResidence()
+        {
+            structures.Add(new Residence());
+        }
+        private void BuildFarm()
+        {
+            structures.Add(new Farm());
+        }
+        private void BuildQuarry()
+        {
+            structures.Add(new Quarry());
+        }
+        private void BuildLumberjack()
+        {
+            structures.Add(new LumberjackHut());
+        }
+        private void BuildStorehouse()
+        {
+            structures.Add(new Storehouse());
+        }
     }
 }

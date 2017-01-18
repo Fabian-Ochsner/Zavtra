@@ -15,6 +15,11 @@ namespace Zavtra
     [Activity(Label = "TownActivity")]
     public class TownActivity : Activity
     {
+        private Button mBtnNewResidence;
+        private Button mBtnNewFarm;
+        private Button mBtnNewQuarry;
+        private Button mBtnNewLumberjack;
+        private Button mBtnNewStorehouse;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,7 +28,33 @@ namespace Zavtra
             SetContentView(Resource.Layout.Town);
             // Create your application here
             Town zavtra = new Town();
-            
+            mBtnNewResidence = FindViewById<Button>(Resource.Id.btnNewResidence);
+            mBtnNewFarm = FindViewById<Button>(Resource.Id.btnNewFarm);
+            mBtnNewQuarry = FindViewById<Button>(Resource.Id.btnNewQuarry);
+            mBtnNewLumberjack = FindViewById<Button>(Resource.Id.btnNewLumberjack);
+            mBtnNewStorehouse = FindViewById<Button>(Resource.Id.btnNewStorehouse);
+
+            mBtnNewResidence.Click += (object sender, EventArgs args) =>
+            {
+                zavtra.BuildStructure(Buildings.residence);
+            };
+            mBtnNewFarm.Click += (object sender, EventArgs args) =>
+            {
+                zavtra.BuildStructure(Buildings.farm);
+            };
+            mBtnNewQuarry.Click += (object sender, EventArgs args) =>
+            {
+                zavtra.BuildStructure(Buildings.quarry);
+            };
+            mBtnNewLumberjack.Click += (object sender, EventArgs args) =>
+            {
+                zavtra.BuildStructure(Buildings.lumberjackHut);
+            };
+            mBtnNewStorehouse.Click += (object sender, EventArgs args) =>
+            {
+                zavtra.BuildStructure(Buildings.storehouse);
+            };
+
         }
     }
 }
