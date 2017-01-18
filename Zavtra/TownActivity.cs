@@ -36,23 +36,23 @@ namespace Zavtra
 
             mBtnNewResidence.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(Buildings.residence);
+                zavtra.BuildStructure(BuildingType.residence);
             };
             mBtnNewFarm.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(Buildings.farm);
+                zavtra.BuildStructure(BuildingType.farm);
             };
             mBtnNewQuarry.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(Buildings.quarry);
+                zavtra.BuildStructure(BuildingType.quarry);
             };
             mBtnNewLumberjack.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(Buildings.lumberjackHut);
+                zavtra.BuildStructure(BuildingType.lumberjackHut);
             };
             mBtnNewStorehouse.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(Buildings.storehouse);
+                zavtra.BuildStructure(BuildingType.storehouse);
             };
 
         }

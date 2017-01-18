@@ -16,7 +16,7 @@ namespace Zavtra
     {
         public Stone()
         {
-            ressource = Ressources.stone;
+            ressource = RessourceType.stone;
             maxRessource = 20000;
             currentRessource = 10000;
         }

@@ -19,10 +19,10 @@ namespace Zavtra
         public Townhall()
         {
             level = 1;
-            building = Buildings.townhall;
+            building = BuildingType.townhall;
             costWood = 20000;
             costStone = 20000;
-            ressource = Ressources.building;
+            ressource = RessourceType.building;
             worker = 1;
             minWorker = 1;
             maxWorker = 1;

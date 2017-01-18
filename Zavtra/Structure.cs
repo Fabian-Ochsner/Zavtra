@@ -15,10 +15,10 @@ namespace Zavtra
     public abstract class Structure
     {
         public int level { get; protected set; }
-        public Buildings building { get; protected set; }
+        public BuildingType building { get; protected set; }
         public double costWood { get; protected set; }
         public double costStone { get; protected set; }
-        public Ressources ressource { get; protected set; }
+        public RessourceType ressource { get; protected set; }
         public int worker { get; protected set; }
         public int minWorker { get; protected set; }
         public int maxWorker { get; protected set; }

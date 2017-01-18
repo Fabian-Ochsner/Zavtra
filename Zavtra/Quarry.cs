@@ -18,10 +18,10 @@ namespace Zavtra
         public Quarry()
         {
             level = 1;
-            building = Buildings.quarry;
+            building = BuildingType.quarry;
             costWood = 5000;
             costStone = 2000;
-            ressource = Ressources.stone;
+            ressource = RessourceType.stone;
             worker = 0;
             minWorker = 0;
             maxWorker = 5;

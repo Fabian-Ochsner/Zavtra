@@ -12,13 +12,13 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    public enum Buildings
+    public enum RessourceType
     {
-        townhall,
-        residence,
-        farm,
-        quarry,
-        lumberjackHut,
-        storehouse
+        building,
+        worker,
+        storage,
+        food,
+        wood,
+        stone
     }
 }

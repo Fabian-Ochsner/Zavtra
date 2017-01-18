@@ -16,7 +16,7 @@ namespace Zavtra
     {
         public Food()
         {
-            ressource = Ressources.food;
+            ressource = RessourceType.food;
             maxRessource = 20000;
             currentRessource = 10000;
         }

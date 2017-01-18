@@ -18,10 +18,10 @@ namespace Zavtra
         public Farm()
         {
             level = 1;
-            building = Buildings.quarry;
+            building = BuildingType.quarry;
             costWood = 5000;
             costStone = 5000;
-            ressource = Ressources.food;
+            ressource = RessourceType.food;
             worker = 0;
             minWorker = 0;
             maxWorker = 5;

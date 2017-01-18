@@ -42,23 +42,23 @@ namespace Zavtra
             ressource = _ressource;
         }
 
-        public void BuildStructure(Buildings type)
+        public void BuildStructure(BuildingType type)
         {
             switch (type)
             {
-                case Buildings.residence:
+                case BuildingType.residence:
                     BuildResidence();
                     break;
-                case Buildings.farm:
+                case BuildingType.farm:
                     BuildFarm();
                     break;
-                case Buildings.quarry:
+                case BuildingType.quarry:
                     BuildQuarry();
                     break;
-                case Buildings.lumberjackHut:
+                case BuildingType.lumberjackHut:
                     BuildLumberjack();
                     break;
-                case Buildings.storehouse:
+                case BuildingType.storehouse:
                     BuildStorehouse();
                     break;
                 default:

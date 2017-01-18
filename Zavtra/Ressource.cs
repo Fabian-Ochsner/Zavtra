@@ -14,7 +14,7 @@ namespace Zavtra
 {
     public abstract class Ressource
     {
-        public Ressources ressource { get; protected set; }
+        public RessourceType ressource { get; protected set; }
         public double maxRessource { get; protected set; }
         public double currentRessource { get; protected set; }
     }

@@ -18,10 +18,10 @@ namespace Zavtra
         public LumberjackHut()
         {
             level = 1;
-            building = Buildings.lumberjackHut;
+            building = BuildingType.lumberjackHut;
             costWood = 2000;
             costStone = 5000;
-            ressource = Ressources.wood;
+            ressource = RessourceType.wood;
             worker = 0;
             minWorker = 0;
             maxWorker = 5;

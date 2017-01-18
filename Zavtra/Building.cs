@@ -16,7 +16,7 @@ namespace Zavtra
     {
         public Building()
         {
-            ressource = Ressources.building;
+            ressource = RessourceType.building;
             maxRessource = 5;
             currentRessource = 3;
         }

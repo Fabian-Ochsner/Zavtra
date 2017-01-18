@@ -16,7 +16,7 @@ namespace Zavtra
     {
         public Worker()
         {
-            ressource = Ressources.worker;
+            ressource = RessourceType.worker;
             maxRessource = 5;
             currentRessource = 5;
         }
