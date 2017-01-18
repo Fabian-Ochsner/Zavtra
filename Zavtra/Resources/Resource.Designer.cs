@@ -69,8 +69,8 @@ namespace Zavtra
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050003
-			public const int btnContinue = 2131034115;
+			// aapt resource value: 0x7f050002
+			public const int btnContinue = 2131034114;
 			
 			// aapt resource value: 0x7f050010
 			public const int btnFarm = 2131034128;
@@ -101,6 +101,9 @@ namespace Zavtra
 			
 			// aapt resource value: 0x7f05000f
 			public const int btnResidence = 2131034127;
+			
+			// aapt resource value: 0x7f050003
+			public const int btnSave = 2131034115;
 			
 			// aapt resource value: 0x7f050013
 			public const int btnStorehouse = 2131034131;
@@ -134,9 +137,6 @@ namespace Zavtra
 			
 			// aapt resource value: 0x7f050007
 			public const int txtFood = 2131034119;
-			
-			// aapt resource value: 0x7f050002
-			public const int txtOr = 2131034114;
 			
 			// aapt resource value: 0x7f050009
 			public const int txtStone = 2131034121;

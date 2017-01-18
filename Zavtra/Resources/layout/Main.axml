@@ -28,21 +28,30 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textSize="25dp" />
-    <TextView
-        android:text="Oder"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
+    <Space
         android:layout_height="0dp"
-        android:layout_weight="15"
-        android:textColor="#000"
-        android:id="@+id/txtOr"
-        android:gravity="center" />
+        android:layout_width="match_parent"
+        android:layout_weight="5" />
     <Button
         android:text="Continue"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
         android:id="@+id/btnContinue"
+        android:background="@drawable/buttoncontinuestyle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="25dp" />
+    <Space
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="5" />
+    <Button
+        android:text="Save"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:id="@+id/btnSave"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textSize="25dp"
@@ -50,7 +59,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="35"
+        android:layout_weight="25"
         android:minWidth="25px"
         android:minHeight="25px">
         <ProgressBar
