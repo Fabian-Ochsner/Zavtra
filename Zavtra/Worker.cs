@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    class Worker : Ressource
+    public class Worker : Ressource
     {
         public Worker()
         {

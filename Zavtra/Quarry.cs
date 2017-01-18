@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    class Quarry : Structure
+    public class Quarry : Structure
     {
         public Quarry()
         {

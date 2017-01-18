@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    class Farm : Structure
+    public class Farm : Structure
     {
         public Farm()
         {

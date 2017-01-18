@@ -20,7 +20,17 @@ namespace Zavtra
 
         public Town()
         {
+            structures = new List<Structure>();
             structures.Add(new Townhall());
+            structures.Add(new Residence());
+            structures.Add(new Storehouse());
+
+            ressource = new List<Ressource>();
+            ressource.Add(new Building());
+            ressource.Add(new Worker());
+            ressource.Add(new Food());
+            ressource.Add(new Wood());
+            ressource.Add(new Stone());
         }
     }
 }

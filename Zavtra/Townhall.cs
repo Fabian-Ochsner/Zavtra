@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    class Townhall : Structure
+    public class Townhall : Structure
     {
         public Townhall()
         {

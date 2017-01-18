@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    class LumberjackHut : Structure
+    public class LumberjackHut : Structure
     {
         public LumberjackHut()
         {
