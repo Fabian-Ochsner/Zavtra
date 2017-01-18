@@ -16,8 +16,8 @@ namespace Zavtra
     {
         public int level { get; protected set; }
         public BuildingType building { get; protected set; }
-        public double costWood { get; protected set; }
-        public double costStone { get; protected set; }
+        public long costWood { get; protected set; }
+        public long costStone { get; protected set; }
         public RessourceType ressource { get; protected set; }
         public int worker { get; protected set; }
         public int minWorker { get; protected set; }
