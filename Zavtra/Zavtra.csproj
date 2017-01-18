@@ -58,7 +58,7 @@
     <Compile Include="LumberjackHut.cs" />
     <Compile Include="Quarry.cs" />
     <Compile Include="Residence.cs" />
-    <Compile Include="Ressource.cs" />
+    <Compile Include="Ressources.cs" />
     <Compile Include="Stone.cs" />
     <Compile Include="Storehouse.cs" />
     <Compile Include="Structure.cs" />
@@ -73,7 +73,6 @@
     <Compile Include="Worker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Town.axml">

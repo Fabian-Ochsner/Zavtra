@@ -12,11 +12,11 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    public class Building : Ressource
+    public class Building : Ressources
     {
         public Building()
         {
-            ressource = RessourceType.building;
+            ressourceType = RessourceType.building;
             maxRessource = 5;
             currentRessource = 3;
         }
