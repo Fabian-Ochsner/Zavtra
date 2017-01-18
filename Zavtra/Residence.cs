@@ -14,6 +14,9 @@ namespace Zavtra
 {
     public class Residence : Structure
     {
+        public int maxResident { get; private set; }
+        public int outputTime { get; private set; }
+
         public Residence()
         {
             level = 1;
@@ -24,6 +27,13 @@ namespace Zavtra
             worker = 0;
             minWorker = 0;
             maxWorker = 2;
+            maxResident = 5;
+            outputTime = 10;
+        }
+
+        public override void upgrade()
+        {
+            costCalvulater();
         }
     }
 }

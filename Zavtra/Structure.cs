@@ -22,5 +22,14 @@ namespace Zavtra
         public int worker { get; protected set; }
         public int minWorker { get; protected set; }
         public int maxWorker { get; protected set; }
+
+        public abstract void upgrade();
+        protected void costCalvulater()
+        {
+            costWood *= ((level + 10) / 10);
+            costStone *= ((level + 10) / 10);
+            level += 1;
+        }
+
     }
 }

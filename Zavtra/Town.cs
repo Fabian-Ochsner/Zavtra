@@ -33,6 +33,15 @@ namespace Zavtra
             ressource.Add(new Stone());
         }
 
+        public Town(List<Structure> _structure, List<Ressource> _ressource)
+        {
+            structures = new List<Structure>();
+            structures = _structure;
+
+            ressource = new List<Ressource>();
+            ressource = _ressource;
+        }
+
         public void BuildStructure(Buildings type)
         {
             switch (type)

@@ -14,6 +14,7 @@ namespace Zavtra
 {
     public class LumberjackHut : Structure
     {
+        public int output { get; private set; }
         public LumberjackHut()
         {
             level = 1;
@@ -24,6 +25,14 @@ namespace Zavtra
             worker = 0;
             minWorker = 0;
             maxWorker = 5;
+            output = 30;
+        }
+
+        public override void upgrade()
+        {
+            maxWorker *= ((level + 10) / 10);
+            output += 5;
+            costCalvulater();
         }
     }
 }

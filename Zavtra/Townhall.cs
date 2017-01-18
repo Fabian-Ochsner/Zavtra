@@ -14,6 +14,8 @@ namespace Zavtra
 {
     public class Townhall : Structure
     {
+        public int MaxBuildings { get; private set; }
+        public int currentBuildings { get; private set; }
         public Townhall()
         {
             level = 1;
@@ -24,6 +26,11 @@ namespace Zavtra
             worker = 1;
             minWorker = 1;
             maxWorker = 1;
+        }
+
+        public override void upgrade()
+        {
+            costCalvulater();
         }
     }
 }
