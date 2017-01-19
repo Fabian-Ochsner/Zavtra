@@ -16,6 +16,7 @@ namespace Zavtra
     public class MainActivity : Activity
     {
         private Button mBtnNewGame;
+        private Button mBtnContinue;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -25,15 +26,23 @@ namespace Zavtra
             SetContentView (Resource.Layout.Main);
 
             mBtnNewGame = FindViewById<Button>(Resource.Id.btnNewGame);
+            mBtnContinue = FindViewById<Button>(Resource.Id.btnContinue);
 
             mBtnNewGame.Click += (object sender, EventArgs args) =>
             {
                 //New Game Activity 
 
                 StartActivity(typeof(TownActivity));
-
-                //TownActivity townActivity = new TownActivity();
+                
             };
+
+
+            mBtnContinue.Click += delegate {
+                var townActivity = new Intent(this, typeof(TownActivity));
+                townActivity.PutExtra("Load", true);
+                StartActivity(townActivity);
+            };
+
         }
     }
 }

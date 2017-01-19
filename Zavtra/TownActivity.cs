@@ -23,11 +23,25 @@ namespace Zavtra
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            bool _load = Intent.GetBooleanExtra("Load", false);
+
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Town);
             // Create your application here
-            Town zavtra = new Town();
+            Town zavtra;
+            if (_load == true)
+            {
+                zavtra = new Town();
+            }
+            else
+            {
+                zavtra = new Town();
+            }
+
+
+
+
             mBtnNewResidence = FindViewById<Button>(Resource.Id.btnNewResidence);
             mBtnNewFarm = FindViewById<Button>(Resource.Id.btnNewFarm);
             mBtnNewQuarry = FindViewById<Button>(Resource.Id.btnNewQuarry);
