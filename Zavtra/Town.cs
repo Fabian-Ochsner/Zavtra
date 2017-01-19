@@ -31,7 +31,11 @@ namespace Zavtra
             ressource.Add(new Food());
             ressource.Add(new Wood());
             ressource.Add(new Stone());
+
+            UpdateRessourceData();
+
         }
+
 
         public Town(List<Structure> _structure, List<Ressource> _ressource)
         {
@@ -87,6 +91,15 @@ namespace Zavtra
         private void BuildStorehouse()
         {
             structures.Add(new Storehouse());
+        }
+
+
+        private void UpdateRessourceData()
+        {
+            foreach(RessourceType type in Enum.GetValues(typeof(RessourceType)))
+            {
+
+            }
         }
     }
 }
