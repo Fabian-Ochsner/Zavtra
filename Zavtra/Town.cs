@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Zavtra
 {
-    class Town
+    public class Town
     {
         public List<Structure> structures { get; private set; }
         public List<Ressource> ressource { get; private set; }
