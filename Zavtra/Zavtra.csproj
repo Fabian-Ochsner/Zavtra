@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="BuildingType.cs" />
     <Compile Include="Building.cs" />
+    <Compile Include="DialogBuildingList.cs" />
     <Compile Include="Farm.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="LumberjackHut.cs" />
@@ -76,6 +77,9 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Town.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DialogBuildingList.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
