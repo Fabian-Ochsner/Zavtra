@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="300px"
-    android:minHeight="400px">
-    <ListView
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="900px"
+    android:minHeight="500px"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:weightSum="100">
+    <TextView
+        android:text="Level"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/livBuilding" />
+        android:layout_weight="30"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLevel" />
+    <TextView
+        android:text="Stone"
+        android:layout_width="match_parent"
+        android:layout_weight="30"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtStone" />
+    <TextView
+        android:text="Wood"
+        android:layout_width="match_parent"
+        android:layout_weight="30"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtWood" />
+    <Button
+        android:text="Upgrade"
+        android:textAlignment="textStart"
+        android:minWidth="30px"
+        android:minHeight="30px"
+        android:layout_width="wrap_content"
+        android:layout_weight="35"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUpgrade" />
 </LinearLayout>

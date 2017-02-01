@@ -39,7 +39,7 @@ namespace Zavtra
             };
 
 
-            mBuildingList = view.FindViewById<ListView>(Resource.Id.livBuilding);
+            //mBuildingList = view.FindViewById<ListView>(Resource.Id.livBuilding);
             //ArrayAdapter<string> adapter = new ArrayAdapter<Structure>(this, Android.Resource.Layout.SimpleListItem1, mBuildings);
 
 
