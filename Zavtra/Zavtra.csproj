@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildingListAdapter.cs" />
     <Compile Include="BuildingType.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="DialogBuildingList.cs" />

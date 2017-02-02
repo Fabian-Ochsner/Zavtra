@@ -16,7 +16,7 @@ namespace Zavtra
     public class DialogBuildingList : DialogFragment
     {
         BuildingType mType;
-        private ListView mBuildingList;
+        private ListView mListView;
         private List<Structure> mBuildings;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -41,6 +41,10 @@ namespace Zavtra
 
             //mBuildingList = view.FindViewById<ListView>(Resource.Id.livBuilding);
             //ArrayAdapter<string> adapter = new ArrayAdapter<Structure>(this, Android.Resource.Layout.SimpleListItem1, mBuildings);
+
+            BuildingListAdapter adapter = new BuildingListAdapter(this, mBuildings);
+
+
 
 
             return view;
