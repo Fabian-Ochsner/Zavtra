@@ -19,6 +19,8 @@ namespace Zavtra
         private ListView mListView;
         private List<Structure> mBuildings;
 
+        
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             Bundle args = Arguments;
