@@ -3,8 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:minWidth="30px"
-    android:minHeight="40px">
+    android:minWidth="900px"
+    android:minHeight="700px">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
