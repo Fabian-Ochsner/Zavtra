@@ -33,7 +33,7 @@ namespace Zavtra
 
         public override void upgrade()
         {
-            costCalvulater();
+            costCalculator();
         }
     }
 }

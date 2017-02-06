@@ -45,7 +45,7 @@ namespace Zavtra
             maxFood *= ((level + 10) / 10);
             maxWood *= ((level + 10) / 10);
             maxStone *= ((level + 10) / 10);
-            costCalvulater();
+            costCalculator();
         }
     }
 }

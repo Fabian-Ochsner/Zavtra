@@ -32,7 +32,7 @@ namespace Zavtra
         {
             maxWorker *= ((level + 10) / 10);
             output += 5;
-            costCalvulater();
+            costCalculator();
         }
     }
 }
