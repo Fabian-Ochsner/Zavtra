@@ -18,7 +18,7 @@ namespace Zavtra
         public Farm()
         {
             level = 1;
-            building = BuildingType.quarry;
+            building = BuildingType.farm;
             costWood = 5000;
             costStone = 5000;
             ressource = RessourceType.food;

@@ -46,17 +46,17 @@ namespace Zavtra
 
             if(row == null)
             {
-                row = LayoutInflater.From(mContext).Inflate(Resource.Layout.DialogBuildingList, null, false);
+                row = LayoutInflater.From(mContext).Inflate(Resource.Layout.DialogBuildingList_row, null, false);
             }
 
             TextView txtLevel = row.FindViewById<TextView>(Resource.Id.txtLevel);
-            txtLevel.Text = mItems[position].level.ToString();
+            txtLevel.Text = "Level: " + mItems[position].level.ToString();
 
             TextView txtStone = row.FindViewById<TextView>(Resource.Id.txtStone);
-            txtLevel.Text = mItems[position].costStone.ToString();
+            txtStone.Text = "Stone: " + mItems[position].costStone.ToString();
 
             TextView txtWood = row.FindViewById<TextView>(Resource.Id.txtWood);
-            txtLevel.Text = mItems[position].costWood.ToString();
+            txtWood.Text = "Wood: " + mItems[position].costWood.ToString();
 
             return row;
         }

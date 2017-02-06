@@ -85,7 +85,10 @@
     <AndroidResource Include="Resources\layout\Town.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\DialogBuildingList.axml">
+    <AndroidResource Include="Resources\layout\DialogBuildingList_row.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DiaBuildingList.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
