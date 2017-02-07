@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using System.Timers;
 
 namespace Zavtra
 {
@@ -28,6 +29,13 @@ namespace Zavtra
         private Button mBtnQuarry;
         private Button mBtnLumberjack;
         private Button mBtnStorehouse;
+        private TextView mTxtFood;
+        private TextView mTxtWood;
+        private TextView mTxtStone;
+        private TextView mTxtWorkforce;
+        private TextView mTxtBuilding;
+        //private Timer mTimer;
+        //int test = 300;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -59,27 +67,48 @@ namespace Zavtra
             mBtnQuarry = FindViewById<Button>(Resource.Id.btnQuarry);
             mBtnLumberjack = FindViewById<Button>(Resource.Id.btnLumberjackHut);
             mBtnStorehouse = FindViewById<Button>(Resource.Id.btnStorehouse);
+            mTxtFood = FindViewById<TextView>(Resource.Id.txtFood);
+            mTxtWood = FindViewById<TextView>(Resource.Id.txtWood);
+            mTxtStone = FindViewById<TextView>(Resource.Id.txtStone);
+            mTxtWorkforce = FindViewById<TextView>(Resource.Id.txtWorkforce);
+            mTxtBuilding = FindViewById<TextView>(Resource.Id.txtBuilding);
+
+
+            initRessource();
+
+
+            //mTimer = new Timer();
+            //mTimer.Interval = 1000;
+            //mTimer.Elapsed += OnTimedEvent;
+
+            //mTimer.Enabled = true;
+            
 
 
             mBtnNewResidence.Click += (object sender, EventArgs args) =>
             {
                 zavtra.BuildStructure(BuildingType.residence);
+                initRessource();
             };
             mBtnNewFarm.Click += (object sender, EventArgs args) =>
             {
                 zavtra.BuildStructure(BuildingType.farm);
+                initRessource();
             };
             mBtnNewQuarry.Click += (object sender, EventArgs args) =>
             {
                 zavtra.BuildStructure(BuildingType.quarry);
+                initRessource();
             };
             mBtnNewLumberjack.Click += (object sender, EventArgs args) =>
             {
                 zavtra.BuildStructure(BuildingType.lumberjackHut);
+                initRessource();
             };
             mBtnNewStorehouse.Click += (object sender, EventArgs args) =>
             {
                 zavtra.BuildStructure(BuildingType.storehouse);
+                initRessource();
             };
 
 
@@ -124,9 +153,44 @@ namespace Zavtra
             //args.PutString("Town", JsonConvert.SerializeObject(zavtra));
             buildingListDialog.Arguments = args;
             buildingListDialog.Show(transaction, "dialog fragment");
-            
-
+            initRessource();
         }
+
+
+        private void initRessource()
+        {
+            foreach (var ress in zavtra.ressource)
+            {
+                switch (ress.ressourceType)
+                {
+                    case RessourceType.food:
+                        mTxtFood.Text = "Food:" + ress.currentRessource.ToString();
+                        break;
+                    case RessourceType.stone:
+                        mTxtStone.Text = "Stone:" + ress.currentRessource.ToString();
+                        break;
+                    case RessourceType.wood:
+                        mTxtWood.Text = "Wood:" + ress.currentRessource.ToString();
+                        break;
+                    case RessourceType.worker:
+                        mTxtWorkforce.Text = "Worker:" + ress.currentRessource.ToString() + "/" + ress.maxRessource.ToString();
+                        break;
+                    case RessourceType.building:
+                        mTxtBuilding.Text = "Building:" + ress.currentRessource.ToString() + "/" + ress.maxRessource.ToString();
+                        break;
+                    default:
+                        Console.WriteLine(ress.ressourceType + " is not a switch ressource!");
+                        break;
+                }
+            }
+        }
+
+        //public void OnTimedEvent(object sender, ElapsedEventArgs e)
+        //{
+        //    mTxtFood.Text = "Food:" + test;
+        //    test += test;
+        //    this.Recreate();
+        //}
 
 
 

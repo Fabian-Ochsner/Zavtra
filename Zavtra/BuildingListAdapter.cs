@@ -115,7 +115,7 @@ namespace Zavtra
             public void OnClick(View v)
             {
                 string name = (string)v.Tag;
-                string text = string.Format(name + "Button Click.");
+                string text = string.Format(name + "Upgrade started");
                 Toast.MakeText(this.context, text, ToastLength.Long).Show();
                 mItems[mPosition].upgrade();
             }

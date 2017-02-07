@@ -14,12 +14,12 @@ namespace Zavtra
 {
     public class Storehouse : Structure
     {
-        public double maxFood { get; private set; }
-        public double maxWood { get; private set; } 
-        public double maxStone { get; private set; }
-        public double food { get; private set; }
-        public double wood { get; private set; }
-        public double stone { get; private set; }
+        public long maxFood { get; private set; }
+        public long maxWood { get; private set; } 
+        public long maxStone { get; private set; }
+        public long food { get; private set; }
+        public long wood { get; private set; }
+        public long stone { get; private set; }
 
 
         public Storehouse()

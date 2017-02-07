@@ -66,9 +66,10 @@ namespace Zavtra
                     BuildStorehouse();
                     break;
                 default:
-
+                    Console.WriteLine(type + " is not a switch BuildingType!");
                     break;
             }
+            UpdateRessourceData();
         }
 
 
@@ -96,7 +97,74 @@ namespace Zavtra
 
         private void UpdateRessourceData()
         {
-            foreach(RessourceType type in Enum.GetValues(typeof(RessourceType)))
+            foreach (var ressource in ressource)
+            {
+                if (ressource.ressourceType == RessourceType.worker)
+                {
+                    ressource.maxRessource = 0;
+                }
+                else if (ressource.ressourceType == RessourceType.food)
+                {
+                    ressource.maxRessource = 0;
+                }
+                else if (ressource.ressourceType == RessourceType.wood)
+                {
+                    ressource.maxRessource = 0;
+                }
+                else if (ressource.ressourceType == RessourceType.stone)
+                {
+                    ressource.maxRessource = 0;
+                }
+            }
+
+
+
+            foreach (var _building in structures)
+            {
+                switch (_building.building)
+                {
+                    case BuildingType.townhall:
+                        foreach(var ressource in ressource)
+                        {
+                            if(ressource.ressourceType == RessourceType.building)
+                            {
+                                ressource.maxRessource = ((Townhall)_building).MaxBuildings;
+                            }
+                        }
+                        break;
+                    case BuildingType.residence:
+                        foreach (var ressource in ressource)
+                        {
+                            if (ressource.ressourceType == RessourceType.worker)
+                            {
+                                ressource.maxRessource += ((Residence)_building).maxResident;
+                            }
+                        }
+                        break;
+                    case BuildingType.storehouse:
+                        foreach (var ressource in ressource)
+                        {
+                            if (ressource.ressourceType == RessourceType.food)
+                            {
+                                ressource.maxRessource += ((Storehouse)_building).maxFood;
+                            }
+                            else if (ressource.ressourceType == RessourceType.wood)
+                            {
+                                ressource.maxRessource += ((Storehouse)_building).maxWood;
+                            }
+                            else if (ressource.ressourceType == RessourceType.stone)
+                            {
+                                ressource.maxRessource += ((Storehouse)_building).maxStone;
+                            }
+                        }
+                        break;
+                }
+            }
+
+
+
+
+            foreach(var type in Enum.GetValues(typeof(RessourceType)))
             {
 
             }
