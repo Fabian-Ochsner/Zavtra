@@ -48,28 +48,37 @@ namespace Zavtra
 
         public void BuildStructure(BuildingType type)
         {
-            switch (type)
+            foreach(var ress in ressource)
             {
-                case BuildingType.residence:
-                    BuildResidence();
-                    break;
-                case BuildingType.farm:
-                    BuildFarm();
-                    break;
-                case BuildingType.quarry:
-                    BuildQuarry();
-                    break;
-                case BuildingType.lumberjackHut:
-                    BuildLumberjack();
-                    break;
-                case BuildingType.storehouse:
-                    BuildStorehouse();
-                    break;
-                default:
-                    Console.WriteLine(type + " is not a switch BuildingType!");
-                    break;
+                if (ress.ressourceType == RessourceType.building && ress.currentRessource < ress.maxRessource)
+                {
+                    switch (type)
+                    {
+                        case BuildingType.residence:
+                            BuildResidence();
+                            break;
+                        case BuildingType.farm:
+                            BuildFarm();
+                            break;
+                        case BuildingType.quarry:
+                            BuildQuarry();
+                            break;
+                        case BuildingType.lumberjackHut:
+                            BuildLumberjack();
+                            break;
+                        case BuildingType.storehouse:
+                            BuildStorehouse();
+                            break;
+                        default:
+                            Console.WriteLine(type + " is not a switch BuildingType!");
+                            break;
+                    }
+                    UpdateRessourceData();
+                }
+
+
             }
-            UpdateRessourceData();
+
         }
 
 
@@ -114,6 +123,10 @@ namespace Zavtra
                 else if (ressource.ressourceType == RessourceType.stone)
                 {
                     ressource.maxRessource = 0;
+                }
+                else if (ressource.ressourceType == RessourceType.building)
+                {
+                    ressource.currentRessource = structures.Count;
                 }
             }
 

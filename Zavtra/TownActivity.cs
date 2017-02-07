@@ -82,33 +82,75 @@ namespace Zavtra
             //mTimer.Elapsed += OnTimedEvent;
 
             //mTimer.Enabled = true;
-            
+
+
+
 
 
             mBtnNewResidence.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(BuildingType.residence);
-                initRessource();
+                if (checkMax())
+                {
+                    zavtra.BuildStructure(BuildingType.residence);
+                    initRessource();
+                }
+                else
+                {
+                    string text = string.Format("Max Building reached");
+                    Toast.MakeText(this, text, ToastLength.Long).Show();
+                }
             };
             mBtnNewFarm.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(BuildingType.farm);
-                initRessource();
+                if (checkMax())
+                {
+                    zavtra.BuildStructure(BuildingType.farm);
+                    initRessource();
+                }
+                else
+                {
+                    string text = string.Format("Max Building reached");
+                    Toast.MakeText(this, text, ToastLength.Long).Show();
+                }
             };
             mBtnNewQuarry.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(BuildingType.quarry);
-                initRessource();
+                if (checkMax())
+                {
+                    zavtra.BuildStructure(BuildingType.quarry);
+                    initRessource();
+                }
+                else
+                {
+                    string text = string.Format("Max Building reached");
+                    Toast.MakeText(this, text, ToastLength.Long).Show();
+                }
             };
             mBtnNewLumberjack.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(BuildingType.lumberjackHut);
-                initRessource();
+                if (checkMax())
+                {
+                    zavtra.BuildStructure(BuildingType.lumberjackHut);
+                    initRessource();
+                }
+                else
+                {
+                    string text = string.Format("Max Building reached");
+                    Toast.MakeText(this, text, ToastLength.Long).Show();
+                }
             };
             mBtnNewStorehouse.Click += (object sender, EventArgs args) =>
             {
-                zavtra.BuildStructure(BuildingType.storehouse);
-                initRessource();
+                if (checkMax())
+                {
+                    zavtra.BuildStructure(BuildingType.storehouse);
+                    initRessource();
+                }
+                else
+                {
+                    string text = string.Format("Max Building reached");
+                    Toast.MakeText(this, text, ToastLength.Long).Show();
+                }
             };
 
 
@@ -183,6 +225,21 @@ namespace Zavtra
                         break;
                 }
             }
+        }
+
+
+        private bool checkMax()
+        {
+            bool max = false;
+            foreach (var ress in zavtra.ressource)
+            {
+                if (ress.ressourceType == RessourceType.building && ress.currentRessource < ress.maxRessource)
+                {
+                    max = true;
+                }
+            }
+            
+            return max;
         }
 
         //public void OnTimedEvent(object sender, ElapsedEventArgs e)
