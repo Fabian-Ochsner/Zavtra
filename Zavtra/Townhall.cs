@@ -32,6 +32,7 @@ namespace Zavtra
         public override void upgrade()
         {
             costCalculator();
+            MaxBuildings += 5;
         }
     }
 }

@@ -104,7 +104,7 @@ namespace Zavtra
         }
 
 
-        private void UpdateRessourceData()
+        public void UpdateRessourceData()
         {
             foreach (var ressource in ressource)
             {
