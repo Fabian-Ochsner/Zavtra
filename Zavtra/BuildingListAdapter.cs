@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Diese Klasse ist dafür zuständig die ListView abzufüllen
+    /// </summary>
     public class BuildingListAdapter : BaseAdapter<Structure>
     {
 

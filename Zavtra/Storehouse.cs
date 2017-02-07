@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Das Lager enthält die Ressourcen die für den bau und zum Überleben benötigt werden
+    /// </summary>
     public class Storehouse : Structure
     {
         public long maxFood { get; private set; }

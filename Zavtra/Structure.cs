@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Die Abstrakte Klasse aller Gebäude
+    /// </summary>
     public abstract class Structure
     {
         public int level { get; protected set; }

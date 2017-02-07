@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Die Ressource Nahrung wird von den Arbeitern zum überleben benötigt
+    /// </summary>
     public class Food : Ressource
     {
         public Food()

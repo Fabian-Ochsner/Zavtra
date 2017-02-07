@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Die Ressource Stein
+    /// </summary>
     public class Stone : Ressource
     {
         public Stone()

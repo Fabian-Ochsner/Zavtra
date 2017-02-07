@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Die Stadthalle legt fest wie viele Gebäude in einem Gorf gebaut werden können
+    /// </summary>
     public class Townhall : Structure
     {
         public int MaxBuildings { get; private set; }

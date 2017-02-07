@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Die Holzfällerhütte ist das Gebäude zum sammeln von Holz
+    /// </summary>
     public class LumberjackHut : Structure
     {
         public int output { get; private set; }

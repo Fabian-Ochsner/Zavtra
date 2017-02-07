@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Der Steinbruch ist das Gebäude zur gewinnung von Stein
+    /// </summary>
     public class Quarry : Structure
     {
         public int output { get; private set; }

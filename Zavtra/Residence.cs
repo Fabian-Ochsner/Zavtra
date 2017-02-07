@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Das Wohnhaus legt fest wieviele Arbeiter in einem Dorf leben können
+    /// </summary>
     public class Residence : Structure
     {
         public int maxResident { get; private set; }

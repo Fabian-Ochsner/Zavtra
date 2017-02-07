@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Diese Klasse ist das oberste Objekt. Alle Gebäude und Ressourcen befinden sich im Dorf
+    /// </summary>
     public class Town
     {
         public List<Structure> structures { get; private set; }

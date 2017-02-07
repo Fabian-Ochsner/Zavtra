@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Die Ressource Arbeiter
+    /// </summary>
     public class Worker : Ressource
     {
         public Worker()

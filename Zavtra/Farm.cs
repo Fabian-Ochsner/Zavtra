@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace Zavtra
 {
+    /// <summary>
+    /// Die Farm ist das Gebäude zum anbauen und sammeln von Nahrung
+    /// </summary>
     public class Farm : Structure
     {
         public int output { get; private set; }

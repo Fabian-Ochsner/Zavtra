@@ -46,6 +46,7 @@ namespace Zavtra
             SetContentView(Resource.Layout.Town);
             // Create your application here
 
+            //Neues dorf erstellen oder laden
             if (_load == true)
             {
                 zavtra = new Town();
@@ -55,7 +56,7 @@ namespace Zavtra
                 zavtra = new Town();
             }
 
-
+            //GUI elemente verbinden
             mBtnNewResidence = FindViewById<Button>(Resource.Id.btnNewResidence);
             mBtnNewFarm = FindViewById<Button>(Resource.Id.btnNewFarm);
             mBtnNewQuarry = FindViewById<Button>(Resource.Id.btnNewQuarry);
@@ -73,7 +74,7 @@ namespace Zavtra
             mTxtWorkforce = FindViewById<TextView>(Resource.Id.txtWorkforce);
             mTxtBuilding = FindViewById<TextView>(Resource.Id.txtBuilding);
 
-
+            //Ressourcen auf GUI initialisieren
             initRessource();
 
 
@@ -86,55 +87,50 @@ namespace Zavtra
 
 
 
-
+            //Button click neue gebäude erstellen
             mBtnNewResidence.Click += (object sender, EventArgs args) =>
             {
-                checkMax(BuildingType.residence);
+                createNewBuilding(BuildingType.residence);
             };
             mBtnNewFarm.Click += (object sender, EventArgs args) =>
             {
-                checkMax(BuildingType.farm);
+                createNewBuilding(BuildingType.farm);
             };
             mBtnNewQuarry.Click += (object sender, EventArgs args) =>
             {
-                checkMax(BuildingType.quarry);
+                createNewBuilding(BuildingType.quarry);
             };
             mBtnNewLumberjack.Click += (object sender, EventArgs args) =>
             {
-                checkMax(BuildingType.lumberjackHut);
+                createNewBuilding(BuildingType.lumberjackHut);
             };
             mBtnNewStorehouse.Click += (object sender, EventArgs args) =>
             {
-                checkMax(BuildingType.storehouse);
+                createNewBuilding(BuildingType.storehouse);
             };
 
 
-
+            //Button click Gebäudeliste
             mBtnTownhall.Click += (object sender, EventArgs e) =>
             {
                 newBuildingList(BuildingType.townhall);
             };
-
             mBtnResidence.Click += (object sender, EventArgs e) =>
             {
                 newBuildingList(BuildingType.residence);
             };
-
             mBtnFarm.Click += (object sender, EventArgs e) =>
             {
                 newBuildingList(BuildingType.farm);
             };
-
             mBtnLumberjack.Click += (object sender, EventArgs e) =>
             {
                 newBuildingList(BuildingType.lumberjackHut);
             };
-
             mBtnQuarry.Click += (object sender, EventArgs e) =>
             {
                 newBuildingList(BuildingType.quarry);
             };
-
             mBtnStorehouse.Click += (object sender, EventArgs e) =>
             {
                 newBuildingList(BuildingType.storehouse);
@@ -142,7 +138,11 @@ namespace Zavtra
         }
 
 
-            private void newBuildingList(BuildingType type)
+        /// <summary>
+        /// Erstellt ein neue Gebäudeliste mit den Gebäuden vom Typ der übergeben wurde
+        /// </summary>
+        /// <param name="type"></param>
+        private void newBuildingList(BuildingType type)
         {
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
             DialogBuildingList buildingListDialog = new DialogBuildingList();
@@ -154,7 +154,9 @@ namespace Zavtra
             initRessource();
         }
 
-
+        /// <summary>
+        /// Initialisiert die Ressourcen auf dem GUI
+        /// </summary>
         private void initRessource()
         {
             foreach (var ress in zavtra.ressource)
@@ -183,8 +185,12 @@ namespace Zavtra
             }
         }
 
-
-        private void checkMax(BuildingType type)
+        /// <summary>
+        /// Erstellt ein neues Gebäude vom Typ der übergeben wurde
+        /// Gibt dem User einen Toast aus falls das Maximum erreicht wurde
+        /// </summary>
+        /// <param name="type"></param>
+        private void createNewBuilding(BuildingType type)
         {
             zavtra.UpdateRessourceData();
             bool max = false;
