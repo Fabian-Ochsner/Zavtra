@@ -15,9 +15,8 @@ namespace Zavtra
     /// <summary>
     /// Die Farm ist das Gebäude zum anbauen und sammeln von Nahrung
     /// </summary>
-    public class Farm : Structure
+    public class Farm : StructureRessource
     {
-        public int output { get; private set; }
         public Farm()
         {
             level = 1;

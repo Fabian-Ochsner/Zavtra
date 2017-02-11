@@ -15,9 +15,8 @@ namespace Zavtra
     /// <summary>
     /// Die Holzfällerhütte ist das Gebäude zum sammeln von Holz
     /// </summary>
-    public class LumberjackHut : Structure
+    public class LumberjackHut : StructureRessource
     {
-        public int output { get; private set; }
         public LumberjackHut()
         {
             level = 1;

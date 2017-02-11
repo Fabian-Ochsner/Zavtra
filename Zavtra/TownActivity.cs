@@ -78,7 +78,7 @@ namespace Zavtra
 
             //Ressourcen auf GUI initialisieren
             initRessource();
-
+            AddTimer();
 
             //mTimer = new Timer();
             //mTimer.Interval = 1000;
@@ -233,7 +233,7 @@ namespace Zavtra
 
         }
 
-        private async void Timer()
+        private async void AddTimer()
         {
             _Timer = true;
 

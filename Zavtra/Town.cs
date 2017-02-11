@@ -188,7 +188,23 @@ namespace Zavtra
 
         internal void AddResource()
         {
-
+            foreach (var ressi in ressource)
+            {
+                if (ressi.ressourceType == RessourceType.food || ressi.ressourceType == RessourceType.stone || ressi.ressourceType == RessourceType.wood)
+                {
+                    foreach (var building in structures)
+                    {
+                        if (ressi.ressourceType == building.ressource)
+                        {
+                            ressi.currentRessource += ((StructureRessource)building).output;
+                            if (ressi.currentRessource > ressi.maxRessource)
+                            {
+                                ressi.currentRessource = ressi.maxRessource;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

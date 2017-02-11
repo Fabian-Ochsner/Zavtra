@@ -15,9 +15,8 @@ namespace Zavtra
     /// <summary>
     /// Der Steinbruch ist das Gebäude zur gewinnung von Stein
     /// </summary>
-    public class Quarry : Structure
+    public class Quarry : StructureRessource
     {
-        public int output { get; private set; }
         public Quarry()
         {
             level = 1;
