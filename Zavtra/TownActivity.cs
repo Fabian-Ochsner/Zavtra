@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using System.Timers;
+using System.Threading.Tasks;
 
 namespace Zavtra
 {
@@ -34,6 +35,7 @@ namespace Zavtra
         private TextView mTxtStone;
         private TextView mTxtWorkforce;
         private TextView mTxtBuilding;
+        private bool _Timer;
         //private Timer mTimer;
         //int test = 300;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -154,6 +156,22 @@ namespace Zavtra
             initRessource();
         }
 
+
+        public void detail()
+        {
+
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            DialogBuildingDetail buildingDetailDialog = new DialogBuildingDetail();
+            buildingDetailDialog.Show(transaction, "dialog fragment");
+        }
+
+
+
+
+
+
+
+
         /// <summary>
         /// Initialisiert die Ressourcen auf dem GUI
         /// </summary>
@@ -215,6 +233,31 @@ namespace Zavtra
 
         }
 
+        private async void Timer()
+        {
+            _Timer = true;
+
+            while (_Timer)
+            {
+                RessourceUpdate();
+
+                if (_Timer)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(1));
+                }
+
+            }
+
+        }
+
+        private void RessourceUpdate()
+        {
+            zavtra.AddResource();
+            initRessource();
+
+        }
+
+
         //public void OnTimedEvent(object sender, ElapsedEventArgs e)
         //{
         //    mTxtFood.Text = "Food:" + test;
@@ -224,6 +267,6 @@ namespace Zavtra
 
 
 
-   
+
     }
 }

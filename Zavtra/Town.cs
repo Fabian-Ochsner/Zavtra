@@ -185,5 +185,10 @@ namespace Zavtra
 
             }
         }
+
+        internal void AddResource()
+        {
+
+        }
     }
 }

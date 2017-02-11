@@ -21,6 +21,7 @@ namespace Zavtra
         public List<Structure> mItems;
         private int _position;
         private Button btnUpgrade;
+        private Button btnDetail;
         private Context mContext;
 
         public BuildingListAdapter(Context context, List<Structure> items)
@@ -68,7 +69,20 @@ namespace Zavtra
 
             btnUpgrade = row.FindViewById<Button>(Resource.Id.btnUpgrade);
 
-            btnUpgrade.SetOnClickListener(new ButtonClickListener(this.mContext, mItems, position));
+            btnUpgrade.SetOnClickListener(new UpgradeClickListener(this.mContext, mItems, position));
+
+            btnDetail = row.FindViewById<Button>(Resource.Id.btnDetail);
+
+
+            btnDetail.SetOnClickListener(new DetailClickListener(this.mContext, mItems, position));
+
+            //btnDetail.Click += delegate
+            //    {
+            //        //FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            //        Console.WriteLine("building detali fragment" + mItems[position].level);
+            //    };
+
+
 
             //btnUpgrade.Click -= delegate {};
             //btnUpgrade.Click += delegate
@@ -96,20 +110,20 @@ namespace Zavtra
         //    this.NotifyDataSetChanged();
         //}
 
-        private void btnUpgradeClick(int position)
-        {
-            mItems[position].upgrade();
+        //private void btnUpgradeClick(int position)
+        //{
+        //    mItems[position].upgrade();
 
-        }
+        //}
 
 
-        private class ButtonClickListener : Java.Lang.Object, View.IOnClickListener
+        private class UpgradeClickListener : Java.Lang.Object, View.IOnClickListener
         {
             private List<Structure> mItems;
             private Context context;
             private int mPosition;
 
-            public ButtonClickListener(Context context, List<Structure> Items , int position)
+            public UpgradeClickListener(Context context, List<Structure> Items , int position)
             {
                 this.context = context;
                 this.mPosition = position;
@@ -121,6 +135,27 @@ namespace Zavtra
                 string text = string.Format(name + "Upgrade started");
                 Toast.MakeText(this.context, text, ToastLength.Long).Show();
                 mItems[mPosition].upgrade();
+            }
+        }
+
+        private class DetailClickListener : Java.Lang.Object, View.IOnClickListener
+        {
+            private List<Structure> mItems;
+            private Context context;
+            private int mPosition;
+
+            public DetailClickListener(Context context, List<Structure> Items, int position)
+            {
+                this.context = context;
+                this.mPosition = position;
+                this.mItems = Items;
+            }
+            public void OnClick(View v)
+            {
+                string name = (string)v.Tag;
+                string text = string.Format(name + "Detail ansicht");
+                Toast.MakeText(this.context, text, ToastLength.Long).Show();
+                //mItems[mPosition].upgrade();
             }
         }
     }

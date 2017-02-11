@@ -31,17 +31,31 @@
             android:id="@+id/txtWood" />
     </LinearLayout>
     <Button
+        android:text="Detail"
+        android:textAlignment="textStart"
+        android:minWidth="30px"
+        android:minHeight="30px"
+        android:layout_width="80dp"
+        android:layout_weight="35"
+        android:layout_height="70dp"
+        android:layout_gravity="right"
+        android:id="@+id/btnDetail"
+        android:layout_marginLeft="140dp"
+        android:layout_marginBottom="12.5dp"
+        android:textSize="16dip"
+        android:onClick="btnDetailClick" />
+    <Button
         android:text="Upgrade"
         android:textAlignment="textStart"
         android:minWidth="30px"
         android:minHeight="30px"
-        android:layout_width="160dp"
+        android:layout_width="110dp"
         android:layout_weight="35"
         android:layout_height="70dp"
         android:layout_gravity="right"
         android:id="@+id/btnUpgrade"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="220dp"
         android:layout_marginBottom="12.5dp"
-        android:textSize="18dip"
-        android:onClick="btnUpgradeClick"/>
+        android:textSize="16dip"
+        android:onClick="btnUpgradeClick" />
 </RelativeLayout>

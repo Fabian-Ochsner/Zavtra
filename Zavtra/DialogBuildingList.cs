@@ -52,6 +52,8 @@ namespace Zavtra
             mBuildingList.Adapter = adapter;
 
 
+
+
             return view;
         }
 
