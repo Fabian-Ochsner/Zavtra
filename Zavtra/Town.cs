@@ -190,7 +190,17 @@ namespace Zavtra
         {
             foreach (var ressi in ressource)
             {
-                if (ressi.ressourceType == RessourceType.food || ressi.ressourceType == RessourceType.stone || ressi.ressourceType == RessourceType.wood)
+                if (ressi.ressourceType == RessourceType.worker)
+                {
+                    foreach (var ressource in ressource)
+                    {
+                        if (ressource.ressourceType == RessourceType.food || ressource.ressourceType == RessourceType.wood)
+                        {
+                            ressource.currentRessource -= (ressi.currentRessource * 20);
+                        }
+                    }
+                }
+                else if (ressi.ressourceType == RessourceType.food || ressi.ressourceType == RessourceType.stone || ressi.ressourceType == RessourceType.wood)
                 {
                     foreach (var building in structures)
                     {
