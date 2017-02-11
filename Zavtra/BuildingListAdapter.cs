@@ -19,7 +19,6 @@ namespace Zavtra
     {
 
         public List<Structure> mItems;
-        private int _position;
         private Button btnUpgrade;
         private Button btnDetail;
         private Context mContext;
@@ -76,6 +75,8 @@ namespace Zavtra
 
             btnDetail.SetOnClickListener(new DetailClickListener(this.mContext, mItems, position));
 
+            //NotifyDataSetChanged();
+
             //btnDetail.Click += delegate
             //    {
             //        //FragmentTransaction transaction = FragmentManager.BeginTransaction();
@@ -88,16 +89,6 @@ namespace Zavtra
             //btnUpgrade.Click += delegate
             //{
             //    btnUpgradeClick(position);
-            //};
-
-
-
-
-
-            //{
-            //    btnUpgradeClick();
-            //    //Console.WriteLine("clicked item: " + position);
-            //    //NotifyDataSetChanged();
             //};
 
 

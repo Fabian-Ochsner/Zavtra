@@ -110,7 +110,7 @@
                 p1:layout_width="match_parent"
                 p1:layout_height="wrap_content"
                 p1:layout_weight="1"
-                p1:visibility="visible"
+                p1:visibility="invisible"
                 p1:id="@+id/button7"
                 p1:enabled="false" />
             <Button

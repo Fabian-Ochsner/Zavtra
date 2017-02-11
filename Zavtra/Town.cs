@@ -17,6 +17,7 @@ namespace Zavtra
     /// </summary>
     public class Town
     {
+        private int DethTimer = 0;
         public List<Structure> structures { get; private set; }
         public List<Ressource> ressource { get; private set; }
 
@@ -188,6 +189,10 @@ namespace Zavtra
 
         internal void AddResource()
         {
+            if(DethTimer <= 0)
+            {
+                DethTimer = 10;
+            }
             foreach (var ressi in ressource)
             {
                 if (ressi.ressourceType == RessourceType.worker)
@@ -197,6 +202,19 @@ namespace Zavtra
                         if (ressource.ressourceType == RessourceType.food || ressource.ressourceType == RessourceType.wood)
                         {
                             ressource.currentRessource -= (ressi.currentRessource * 20);
+                            if (ressource.currentRessource <= 0)
+                            {
+                                ressource.currentRessource = 0;
+                                DethTimer -= 1;
+                                if(DethTimer == 0)
+                                {
+                                    ressi.currentRessource -= 1;
+                                    if (ressi.currentRessource < 0)
+                                    {
+                                        ressi.currentRessource = 0;
+                                    }
+                                }
+                            }
                         }
                     }
                 }

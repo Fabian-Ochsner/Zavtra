@@ -200,6 +200,7 @@ namespace Zavtra
                         Console.WriteLine(ress.ressourceType + " is not a switch ressource!");
                         break;
                 }
+
             }
         }
 
@@ -254,7 +255,6 @@ namespace Zavtra
         {
             zavtra.AddResource();
             initRessource();
-
         }
 
 
