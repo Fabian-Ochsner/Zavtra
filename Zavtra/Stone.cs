@@ -21,7 +21,7 @@ namespace Zavtra
         {
             ressourceType = RessourceType.stone;
             maxRessource = 20000;
-            currentRessource = 10000;
+            currentRessource = 15000;
         }
     }
 }

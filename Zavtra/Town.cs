@@ -36,7 +36,7 @@ namespace Zavtra
             ressource.Add(new Wood());
             ressource.Add(new Stone());
 
-            UpdateRessourceData();
+            UpdateRessourceData(BuildingType.townhall);
 
         }
 
@@ -60,24 +60,28 @@ namespace Zavtra
                     {
                         case BuildingType.residence:
                             BuildResidence();
+                            UpdateRessourceData(type);
                             break;
                         case BuildingType.farm:
                             BuildFarm();
+                            UpdateRessourceData(type);
                             break;
                         case BuildingType.quarry:
                             BuildQuarry();
+                            UpdateRessourceData(type);
                             break;
                         case BuildingType.lumberjackHut:
                             BuildLumberjack();
+                            UpdateRessourceData(type);
                             break;
                         case BuildingType.storehouse:
                             BuildStorehouse();
+                            UpdateRessourceData(type);
                             break;
                         default:
                             Console.WriteLine(type + " is not a switch BuildingType!");
                             break;
                     }
-                    UpdateRessourceData();
                 }
 
 
@@ -108,29 +112,54 @@ namespace Zavtra
         }
 
 
-        public void UpdateRessourceData()
+        public void UpdateRessourceData(BuildingType t)
         {
+            int woodCost;
+            int stoneCost;
+            switch (t)
+            {
+                case BuildingType.residence:
+                case BuildingType.farm:
+                    woodCost = 2500;
+                    stoneCost = 2500;
+                    break;
+                case BuildingType.lumberjackHut:
+                    woodCost = 1000;
+                    stoneCost = 2500;
+                    break;
+                case BuildingType.quarry:
+                    woodCost = 2500;
+                    stoneCost = 1000;
+                    break;
+                case BuildingType.storehouse:
+                    woodCost = 5000;
+                    stoneCost = 5000;
+                    break;
+                default:
+                    woodCost = 0;
+                    stoneCost = 0;
+                    break;
+            }
+
             foreach (var ressource in ressource)
             {
-                if (ressource.ressourceType == RessourceType.worker)
+                switch (ressource.ressourceType)
                 {
-                    ressource.maxRessource = 0;
-                }
-                else if (ressource.ressourceType == RessourceType.food)
-                {
-                    ressource.maxRessource = 0;
-                }
-                else if (ressource.ressourceType == RessourceType.wood)
-                {
-                    ressource.maxRessource = 0;
-                }
-                else if (ressource.ressourceType == RessourceType.stone)
-                {
-                    ressource.maxRessource = 0;
-                }
-                else if (ressource.ressourceType == RessourceType.building)
-                {
-                    ressource.currentRessource = structures.Count;
+                    case RessourceType.worker:
+                        ressource.currentRessource -= 0;
+                        break;
+                    case RessourceType.food:
+                        ressource.currentRessource -= 0;
+                        break;
+                    case RessourceType.wood:
+                        ressource.currentRessource -= woodCost;
+                        break;
+                    case RessourceType.stone:
+                        ressource.currentRessource -= stoneCost;
+                        break;
+                    case RessourceType.building:
+                        ressource.currentRessource = structures.Count;
+                        break;
                 }
             }
 

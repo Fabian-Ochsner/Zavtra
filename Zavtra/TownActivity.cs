@@ -177,6 +177,16 @@ namespace Zavtra
         /// </summary>
         private void initRessource()
         {
+            bool stoneFarm = true;
+            bool stoneQuarry = true;
+            bool stoneLumberjack = true;
+            bool stonResidence = true;
+            bool stoneStorehouse = true;
+            bool woodFarm = true;
+            bool woodQuarry = true;
+            bool woodLumberjack = true;
+            bool woodResidence = true;
+            bool woodStorehouse = true;
             foreach (var ress in zavtra.ressource)
             {
                 switch (ress.ressourceType)
@@ -185,9 +195,57 @@ namespace Zavtra
                         mTxtFood.Text = "Food:" + ress.currentRessource.ToString();
                         break;
                     case RessourceType.stone:
+                        if (ress.currentRessource > 2500)
+                        {
+                            stoneFarm= true;
+                            stoneQuarry = true;
+                            stoneLumberjack = true;
+                            stonResidence = true;
+                            stoneStorehouse = true;
+                        }
+                        else if (ress.currentRessource > 1000)
+                        {
+                            stoneFarm = false;
+                            stoneQuarry = true;
+                            stoneLumberjack = false;
+                            stonResidence = false;
+                            stoneStorehouse = false;
+                        }
+                        else
+                        {
+                            stoneFarm = false;
+                            stoneQuarry = false;
+                            stoneLumberjack = false;
+                            stonResidence = false;
+                            stoneStorehouse = false;
+                        }
                         mTxtStone.Text = "Stone:" + ress.currentRessource.ToString();
                         break;
                     case RessourceType.wood:
+                        if (ress.currentRessource > 2500)
+                        {
+                            woodFarm = true;
+                            woodQuarry = true;
+                            woodLumberjack = true;
+                            woodResidence  = true;
+                            woodStorehouse = true;
+                        }
+                        else if (ress.currentRessource > 1000)
+                        {
+                            woodFarm = false;
+                            woodQuarry = false;
+                            woodLumberjack = true;
+                            woodResidence = false;
+                            woodStorehouse = false;
+                        }
+                        else
+                        {
+                            woodFarm = false;
+                            woodQuarry = false;
+                            woodLumberjack = false;
+                            woodResidence = false;
+                            woodStorehouse = false;
+                        }
                         mTxtWood.Text = "Wood:" + ress.currentRessource.ToString();
                         break;
                     case RessourceType.worker:
@@ -200,7 +258,26 @@ namespace Zavtra
                         Console.WriteLine(ress.ressourceType + " is not a switch ressource!");
                         break;
                 }
-
+                if(woodFarm == false || stoneFarm == false)
+                {
+                    mBtnNewFarm.Enabled = false;
+                }
+                if (woodLumberjack == false || stoneLumberjack == false)
+                {
+                    mBtnNewLumberjack.Enabled = false;
+                }
+                if (woodQuarry == false || stoneQuarry == false)
+                {
+                    mBtnNewQuarry.Enabled = false;
+                }
+                if (woodResidence == false || stonResidence == false)
+                {
+                    mBtnNewResidence.Enabled = false;
+                }
+                if (woodStorehouse == false || stoneStorehouse == false)
+                {
+                    mBtnNewStorehouse.Enabled = false;
+                }
             }
         }
 
@@ -211,7 +288,7 @@ namespace Zavtra
         /// <param name="type"></param>
         private void createNewBuilding(BuildingType type)
         {
-            zavtra.UpdateRessourceData();
+            zavtra.UpdateRessourceData(BuildingType.townhall);
             bool max = false;
             foreach (var ress in zavtra.ressource)
             {
