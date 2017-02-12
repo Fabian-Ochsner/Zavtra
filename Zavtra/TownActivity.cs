@@ -192,7 +192,7 @@ namespace Zavtra
                 switch (ress.ressourceType)
                 {
                     case RessourceType.food:
-                        mTxtFood.Text = "Food:" + ress.currentRessource.ToString();
+                        mTxtFood.Text = "Food:" + ress.currentRessource.ToString() + " ";
                         break;
                     case RessourceType.stone:
                         if (ress.currentRessource > 2500)
@@ -219,7 +219,7 @@ namespace Zavtra
                             stonResidence = false;
                             stoneStorehouse = false;
                         }
-                        mTxtStone.Text = "Stone:" + ress.currentRessource.ToString();
+                        mTxtStone.Text = "Stone:" + ress.currentRessource.ToString() + " ";
                         break;
                     case RessourceType.wood:
                         if (ress.currentRessource > 2500)
@@ -246,7 +246,7 @@ namespace Zavtra
                             woodResidence = false;
                             woodStorehouse = false;
                         }
-                        mTxtWood.Text = "Wood:" + ress.currentRessource.ToString();
+                        mTxtWood.Text = "Wood:" + ress.currentRessource.ToString() + " ";
                         break;
                     case RessourceType.worker:
                         mTxtWorkforce.Text = "Worker:" + ress.currentRessource.ToString() + "/" + ress.maxRessource.ToString();
@@ -262,22 +262,43 @@ namespace Zavtra
                 {
                     mBtnNewFarm.Enabled = false;
                 }
+                else
+                {
+                    mBtnNewFarm.Enabled = true;
+                }
                 if (woodLumberjack == false || stoneLumberjack == false)
                 {
                     mBtnNewLumberjack.Enabled = false;
+                }
+                else
+                {
+                    mBtnNewLumberjack.Enabled = true;
                 }
                 if (woodQuarry == false || stoneQuarry == false)
                 {
                     mBtnNewQuarry.Enabled = false;
                 }
+                else
+                {
+                    mBtnNewQuarry.Enabled = true;
+                }
                 if (woodResidence == false || stonResidence == false)
                 {
                     mBtnNewResidence.Enabled = false;
+                }
+                else
+                {
+                    mBtnNewResidence.Enabled = true;
                 }
                 if (woodStorehouse == false || stoneStorehouse == false)
                 {
                     mBtnNewStorehouse.Enabled = false;
                 }
+                else
+                {
+                    mBtnNewStorehouse.Enabled = true;
+                }
+
             }
         }
 

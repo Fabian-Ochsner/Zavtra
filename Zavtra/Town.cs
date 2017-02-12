@@ -146,7 +146,7 @@ namespace Zavtra
                 switch (ressource.ressourceType)
                 {
                     case RessourceType.worker:
-                        ressource.currentRessource -= 0;
+                        ressource.maxRessource = 0;
                         break;
                     case RessourceType.food:
                         ressource.currentRessource -= 0;
