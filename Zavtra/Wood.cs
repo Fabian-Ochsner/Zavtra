@@ -20,8 +20,8 @@ namespace Zavtra
         public Wood()
         {
             ressourceType = RessourceType.wood;
-            maxRessource = 20000;
-            currentRessource = 15000;
+            maxRessource = 30000;
+            currentRessource = 25000;
         }
     }
 }

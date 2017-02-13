@@ -35,9 +35,9 @@ namespace Zavtra
             worker = 1;
             minWorker = 1;
             maxWorker = 1;
-            maxFood = 20000;
-            maxWood = 20000;
-            maxStone = 20000;
+            maxFood = 30000;
+            maxWood = 30000;
+            maxStone = 30000;
             food = 0;
             wood = 0;
             stone = 0;

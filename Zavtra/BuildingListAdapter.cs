@@ -19,14 +19,16 @@ namespace Zavtra
     {
 
         public List<Structure> mItems;
+        private List<Ressource> mRessource;
         private Button btnUpgrade;
         private Button btnDetail;
         private Context mContext;
 
-        public BuildingListAdapter(Context context, List<Structure> items)
+        public BuildingListAdapter(Context context, List<Structure> items, List<Ressource> ressource)
         {
             mItems = items;
             mContext = context;
+            mRessource = ressource;
         }
         public override int Count
         {
@@ -68,7 +70,7 @@ namespace Zavtra
 
             btnUpgrade = row.FindViewById<Button>(Resource.Id.btnUpgrade);
 
-            btnUpgrade.SetOnClickListener(new UpgradeClickListener(this.mContext, mItems, position));
+            btnUpgrade.SetOnClickListener(new UpgradeClickListener(this.mContext, mItems, position, mRessource));
 
             btnDetail = row.FindViewById<Button>(Resource.Id.btnDetail);
 
@@ -111,21 +113,74 @@ namespace Zavtra
         private class UpgradeClickListener : Java.Lang.Object, View.IOnClickListener
         {
             private List<Structure> mItems;
-            private Context context;
+            private List<Ressource> mRessource;
+            private Context mContext;
             private int mPosition;
 
-            public UpgradeClickListener(Context context, List<Structure> Items , int position)
+            public UpgradeClickListener(Context context, List<Structure> Items , int position, List<Ressource> ressource)
             {
-                this.context = context;
-                this.mPosition = position;
-                this.mItems = Items;
+                mContext = context;
+                mPosition = position;
+                mItems = Items;
+                mRessource = ressource;
             }
             public void OnClick(View v)
             {
-                string name = (string)v.Tag;
-                string text = string.Format(name + "Upgrade started");
-                Toast.MakeText(this.context, text, ToastLength.Long).Show();
-                mItems[mPosition].upgrade();
+                bool wood = false;
+                bool stone = false;
+                string text;
+                foreach (var ress in mRessource)
+                {
+                    switch (ress.ressourceType)
+                    {
+                        case RessourceType.stone:
+                            if(mItems[mPosition].costStone > ress.currentRessource)
+                            {
+                                stone = false;
+                            }
+                            else
+                            {
+                                stone = true;
+                            }
+                            break;
+                        case RessourceType.wood:
+                            if (mItems[mPosition].costStone > ress.currentRessource)
+                            {
+                                wood = false;
+                            }
+                            else
+                            {
+                                wood = true;
+                            }
+                            break;
+                    }
+                }
+                
+                if(wood && stone)
+                {
+                    text = string.Format("Upgrade gestarted");
+                    foreach (var ress in mRessource)
+                    {
+                        switch (ress.ressourceType)
+                        {
+                            case RessourceType.stone:
+                                ress.currentRessource -= mItems[mPosition].costStone;
+                                break;
+                            case RessourceType.wood:
+                                ress.currentRessource -= mItems[mPosition].costWood;
+                                break;
+                        }
+                    }
+                    mItems[mPosition].upgrade();
+                }
+                else
+                {
+                    text = string.Format("Nicht genug Ressourcen!");
+                }
+                Toast.MakeText(this.mContext, text, ToastLength.Long).Show();
+
+
+
             }
         }
 
@@ -144,7 +199,7 @@ namespace Zavtra
             public void OnClick(View v)
             {
                 string name = (string)v.Tag;
-                string text = string.Format(name + "Detail ansicht");
+                string text = string.Format(name + "Detail Ansicht");
                 Toast.MakeText(this.context, text, ToastLength.Long).Show();
                 //mItems[mPosition].upgrade();
             }

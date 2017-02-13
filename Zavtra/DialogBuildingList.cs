@@ -47,7 +47,7 @@ namespace Zavtra
 
             mBuildingList = view.FindViewById<ListView>(Resource.Id.myListView);
 
-            BuildingListAdapter adapter = new BuildingListAdapter(this.Activity, mBuildings);
+            BuildingListAdapter adapter = new BuildingListAdapter(this.Activity, mBuildings, TownActivity.zavtra.ressource);
 
             mBuildingList.Adapter = adapter;
 

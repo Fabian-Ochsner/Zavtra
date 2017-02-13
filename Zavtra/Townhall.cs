@@ -23,8 +23,8 @@ namespace Zavtra
         {
             level = 1;
             building = BuildingType.townhall;
-            costWood = 20000;
-            costStone = 20000;
+            costWood = 15000;
+            costStone = 15000;
             ressource = RessourceType.building;
             worker = 1;
             minWorker = 1;

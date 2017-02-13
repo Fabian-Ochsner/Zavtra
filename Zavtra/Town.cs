@@ -263,5 +263,21 @@ namespace Zavtra
                 }
             }
         }
+
+        internal void updateCost(long costWood, long costStone)
+        {
+            foreach(var ress in ressource)
+            {
+                switch (ress.ressourceType)
+                {
+                    case RessourceType.stone:
+                        ress.currentRessource -= costStone;
+                        break;
+                    case RessourceType.wood:
+                        ress.currentRessource -= costWood;
+                        break;
+                }
+            }
+        }
     }
 }
