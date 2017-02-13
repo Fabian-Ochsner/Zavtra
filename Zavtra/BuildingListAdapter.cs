@@ -178,9 +178,6 @@ namespace Zavtra
                     text = string.Format("Nicht genug Ressourcen!");
                 }
                 Toast.MakeText(this.mContext, text, ToastLength.Long).Show();
-
-
-
             }
         }
 
