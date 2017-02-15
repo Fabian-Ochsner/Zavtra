@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:layout_weight="100"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_weight="2000"
         android:layout_height="wrap_content"
         android:minWidth="900px"
         android:minHeight="50px"
@@ -18,10 +20,26 @@
             android:textSize="20dip"
             android:id="@+id/txtLevel" />
         <TextView
+            android:text="Ressource:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtRessource" />
+        <TextView
+            android:text="Max Output:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtMaxOutput" />
+        <TextView
+            android:text="Current Output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCurrentOutput"
+            android:layout_marginBottom="17.0dp" />
+        <TextView
             android:text="Stone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dip"
+            android:textSize="16dip"
             android:id="@+id/txtStone" />
         <TextView
             android:text="Wood"
@@ -30,32 +48,58 @@
             android:textSize="15dip"
             android:id="@+id/txtWood" />
     </LinearLayout>
-    <Button
-        android:text="Detail"
-        android:textAlignment="textStart"
-        android:minWidth="30px"
-        android:minHeight="30px"
-        android:layout_width="80dp"
-        android:layout_weight="35"
-        android:layout_height="70dp"
-        android:layout_gravity="right"
-        android:id="@+id/btnDetail"
-        android:layout_marginLeft="140dp"
-        android:layout_marginBottom="12.5dp"
-        android:textSize="16dip"
-        android:onClick="btnDetailClick" />
-    <Button
-        android:text="Upgrade"
-        android:textAlignment="textStart"
-        android:minWidth="30px"
-        android:minHeight="30px"
-        android:layout_width="110dp"
-        android:layout_weight="35"
-        android:layout_height="70dp"
-        android:layout_gravity="right"
-        android:id="@+id/btnUpgrade"
-        android:layout_marginLeft="220dp"
-        android:layout_marginBottom="12.5dp"
-        android:textSize="16dip"
-        android:onClick="btnUpgradeClick" />
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
+        <TextView
+            android:text="Worker: 0/0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtWorker"
+            android:textSize="20dip" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="144.5dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="+"
+                android:textAlignment="textStart"
+                android:layout_width="60dp"
+                android:layout_weight="35"
+                android:layout_height="50dp"
+                android:textSize="16dip"
+                android:id="@+id/btnAdd" />
+            <Button
+                android:text="-"
+                android:textAlignment="textStart"
+                android:minWidth="30px"
+                android:minHeight="30px"
+                android:layout_width="60dp"
+                android:layout_weight="35"
+                android:layout_height="50dp"
+                android:id="@+id/btnDetail"
+                android:textSize="16dip"
+                android:onClick="btnDetailClick" />
+        </LinearLayout>
+        <Button
+            android:text="Upgrade"
+            android:textAlignment="textStart"
+            android:minWidth="30px"
+            android:minHeight="30px"
+            android:layout_width="110dp"
+            android:layout_weight="35"
+            android:layout_height="48.5dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btnUpgrade"
+            android:layout_marginBottom="12.5dp"
+            android:textSize="16dip"
+            android:onClick="btnUpgradeClick"
+            android:layout_marginTop="10.0dp" />
+    </LinearLayout>
+</LinearLayout>

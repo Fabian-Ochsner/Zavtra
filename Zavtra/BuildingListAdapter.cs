@@ -60,7 +60,7 @@ namespace Zavtra
             }
 
             TextView txtLevel = row.FindViewById<TextView>(Resource.Id.txtLevel);
-            txtLevel.Text = "Level: " + mItems[position].level.ToString();
+            txtLevel.Text = BuildingTypeConverter(mItems[position].building) + " Level " + mItems[position].level.ToString();
 
             TextView txtStone = row.FindViewById<TextView>(Resource.Id.txtStone);
             txtStone.Text = "Stone: " + mItems[position].costStone.ToString();
@@ -96,6 +96,35 @@ namespace Zavtra
 
             return row;
         }
+
+        private string BuildingTypeConverter(BuildingType _building)
+        {
+            string name = "";
+            switch (_building)
+            {
+                case BuildingType.farm:
+                    name = "Farm";
+                    break;
+                case BuildingType.lumberjackHut:
+                    name = "Holzhällerhütte";
+                    break;
+                case BuildingType.quarry:
+                    name = "Steinbruch";
+                    break;
+                case BuildingType.residence:
+                    name = "Wohnhaus";
+                    break;
+                case BuildingType.storehouse:
+                    name = "Lagerhaus";
+                    break;
+                case BuildingType.townhall:
+                    name = "Stadthalle";
+                    break;
+            }
+            return name;
+        }
+
+
 
         //private void HandleClick(object sender, EventArgs e)
         //{
@@ -179,6 +208,15 @@ namespace Zavtra
                 }
                 Toast.MakeText(this.mContext, text, ToastLength.Long).Show();
             }
+
+
+
+
+
+
+
+
+
         }
 
         private class DetailClickListener : Java.Lang.Object, View.IOnClickListener

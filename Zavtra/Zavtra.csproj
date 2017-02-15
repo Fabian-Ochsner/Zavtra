@@ -58,7 +58,6 @@
     <Compile Include="BuildingListAdapter.cs" />
     <Compile Include="BuildingType.cs" />
     <Compile Include="Building.cs" />
-    <Compile Include="DialogBuildingDetail.cs" />
     <Compile Include="DialogBuildingList.cs" />
     <Compile Include="Farm.cs" />
     <Compile Include="Food.cs" />
@@ -91,9 +90,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\DiaBuildingList.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\DialogBuildingDetail.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
