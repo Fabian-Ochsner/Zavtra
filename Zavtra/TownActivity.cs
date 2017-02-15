@@ -157,14 +157,6 @@ namespace Zavtra
         }
 
 
-        public void detail()
-        {
-
-            FragmentTransaction transaction = FragmentManager.BeginTransaction();
-            DialogBuildingDetail buildingDetailDialog = new DialogBuildingDetail();
-            buildingDetailDialog.Show(transaction, "dialog fragment");
-        }
-
 
 
 
