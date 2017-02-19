@@ -230,7 +230,7 @@ namespace Zavtra
                     {
                         if (ressource.ressourceType == RessourceType.food || ressource.ressourceType == RessourceType.wood)
                         {
-                            ressource.currentRessource -= (ressi.currentRessource * 20);
+                            ressource.currentRessource -= (((Worker)ressi).ressource * 20);
                             if (ressource.currentRessource <= 0)
                             {
                                 ressource.currentRessource = 0;
@@ -238,9 +238,23 @@ namespace Zavtra
                                 if(DethTimer == 0)
                                 {
                                     ressi.currentRessource -= 1;
+                                    ((Worker)ressi).ressource -= 1;
                                     if (ressi.currentRessource < 0)
                                     {
+                                        bool worker = false;
                                         ressi.currentRessource = 0;
+                                        foreach(var building in structures)
+                                        {
+                                            if(building.building != BuildingType.townhall && building.worker > 0 && !worker)
+                                            {
+                                                building.worker -= 1;
+                                                worker = true;
+                                            }
+                                        }
+                                    }
+                                    if (((Worker)ressi).ressource < 0)
+                                    {
+                                        ((Worker)ressi).ressource = 0;
                                     }
                                 }
                             }

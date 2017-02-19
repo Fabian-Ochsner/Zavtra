@@ -17,11 +17,13 @@ namespace Zavtra
     /// </summary>
     public class Worker : Ressource
     {
+        public long ressource { get; set; }
         public Worker()
         {
             ressourceType = RessourceType.worker;
             maxRessource = 5;
             currentRessource = 5;
+            ressource = 5;
         }
     }
 }

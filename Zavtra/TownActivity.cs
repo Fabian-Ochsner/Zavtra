@@ -241,7 +241,7 @@ namespace Zavtra
                         mTxtWood.Text = "Wood:" + ress.currentRessource.ToString() + " ";
                         break;
                     case RessourceType.worker:
-                        mTxtWorkforce.Text = "Worker:" + ress.currentRessource.ToString() + "/" + ress.maxRessource.ToString();
+                        mTxtWorkforce.Text = "Worker:" + ress.currentRessource.ToString() + "/" + ((Worker)ress).ressource.ToString() + "/" + ress.maxRessource.ToString() + " (Limit)";
                         break;
                     case RessourceType.building:
                         mTxtBuilding.Text = "Building:" + ress.currentRessource.ToString() + "/" + ress.maxRessource.ToString();
