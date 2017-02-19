@@ -29,7 +29,7 @@ namespace Zavtra
             worker = 1;
             minWorker = 0;
             maxWorker = 1;
-            MaxBuildings = 5;
+            MaxBuildings = 10;
         }
 
         public override void upgrade()
