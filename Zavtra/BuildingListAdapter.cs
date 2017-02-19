@@ -59,6 +59,12 @@ namespace Zavtra
                 row = LayoutInflater.From(mContext).Inflate(Resource.Layout.DialogBuildingList_row, null, false);
             }
 
+            TextView txtRessource = row.FindViewById<TextView>(Resource.Id.txtRessource);
+            txtRessource.Text = "Ressource: " + RessourceTypeConverter(mItems[position].ressource);
+
+            TextView txtMaxOutput = row.FindViewById<TextView>(Resource.Id.txtMaxOutput);
+            //txtMaxOutput.Text = "Max. Produktion: " + mItems[position].
+
             TextView txtLevel = row.FindViewById<TextView>(Resource.Id.txtLevel);
             txtLevel.Text = BuildingTypeConverter(mItems[position].building) + " Level " + mItems[position].level.ToString();
 
@@ -124,6 +130,33 @@ namespace Zavtra
             return name;
         }
 
+
+        private string RessourceTypeConverter(RessourceType _ressource)
+        {
+            string name = "";
+            switch (_ressource)
+            {
+                case RessourceType.building:
+                    name = "Max. Gebäude";
+                    break;
+                case RessourceType.food:
+                    name = "Nahrung";
+                    break;
+                case RessourceType.stone:
+                    name = "Stein";
+                    break;
+                case RessourceType.storage:
+                    name = "Lagermenge";
+                    break;
+                case RessourceType.wood:
+                    name = "Holz";
+                    break;
+                case RessourceType.worker:
+                    name = "Einwohner";
+                    break;
+            }
+            return name;
+        }
 
 
         //private void HandleClick(object sender, EventArgs e)
