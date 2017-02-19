@@ -37,6 +37,7 @@ namespace Zavtra
         public override void upgrade()
         {
             costCalculator();
+            maxResident += 2;
         }
     }
 }

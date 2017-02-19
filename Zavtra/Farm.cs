@@ -27,13 +27,13 @@ namespace Zavtra
             worker = 0;
             minWorker = 0;
             maxWorker = 5;
-            output = 50;
+            output = 250;
         }
 
         public override void upgrade()
         {
             maxWorker *= ((level + 10) / 10);
-            output += 5;
+            output += 10;
             costCalculator();
         }
     }

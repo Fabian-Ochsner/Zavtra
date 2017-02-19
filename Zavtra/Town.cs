@@ -18,6 +18,7 @@ namespace Zavtra
     public class Town
     {
         private int DethTimer = 0;
+        private int LifeTimer = 0;
         public List<Structure> structures { get; private set; }
         public List<Ressource> ressource { get; private set; }
 
@@ -220,20 +221,24 @@ namespace Zavtra
         {
             if(DethTimer <= 0)
             {
-                DethTimer = 10;
+                DethTimer = 15;
+            }
+            if (LifeTimer <= 0)
+            {
+                LifeTimer = 10;
             }
             foreach (var ressi in ressource)
             {
                 if (ressi.ressourceType == RessourceType.worker)
                 {
-                    foreach (var ressource in ressource)
+                    foreach (var ressourc in ressource)
                     {
-                        if (ressource.ressourceType == RessourceType.food || ressource.ressourceType == RessourceType.wood)
+                        if (ressourc.ressourceType == RessourceType.food || ressourc.ressourceType == RessourceType.wood)
                         {
-                            ressource.currentRessource -= (((Worker)ressi).ressource * 20);
-                            if (ressource.currentRessource <= 0)
+                            ressourc.currentRessource -= (((Worker)ressi).ressource * 20);
+                            if (ressourc.currentRessource <= 0)
                             {
-                                ressource.currentRessource = 0;
+                                ressourc.currentRessource = 0;
                                 DethTimer -= 1;
                                 if(DethTimer == 0)
                                 {
@@ -255,6 +260,30 @@ namespace Zavtra
                                     if (((Worker)ressi).ressource < 0)
                                     {
                                         ((Worker)ressi).ressource = 0;
+                                    }
+                                }
+                            }
+                        }
+                        if(ressourc.ressourceType == RessourceType.food)
+                        {
+                            foreach (var ress in ressource)
+                            {
+                                if (ress.ressourceType == RessourceType.wood)
+                                {
+                                    if(ressourc.currentRessource > 2000 && ress.currentRessource > 1000)
+                                    {
+                                        foreach(var building in structures)
+                                        {
+                                            if(building.building == BuildingType.residence && building.worker == 2 && ((Worker)ressi).ressource < ressi.maxRessource)
+                                            {
+                                                if (LifeTimer == 10)
+                                                {
+                                                    ressi.currentRessource += 1;
+                                                    ((Worker)ressi).ressource += 1;
+                                                }
+                                                LifeTimer -= 1;
+                                            }
+                                        }
                                     }
                                 }
                             }

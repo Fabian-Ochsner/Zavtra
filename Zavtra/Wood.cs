@@ -21,7 +21,7 @@ namespace Zavtra
         {
             ressourceType = RessourceType.wood;
             maxRessource = 30000;
-            currentRessource = 25000;
+            currentRessource = 30000;
         }
     }
 }

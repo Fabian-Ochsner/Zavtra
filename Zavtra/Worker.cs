@@ -22,7 +22,7 @@ namespace Zavtra
         {
             ressourceType = RessourceType.worker;
             maxRessource = 5;
-            currentRessource = 5;
+            currentRessource = 3;
             ressource = 5;
         }
     }

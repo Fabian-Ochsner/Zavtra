@@ -27,7 +27,7 @@ namespace Zavtra
             worker = 0;
             minWorker = 0;
             maxWorker = 5;
-            output = 30;
+            output = 200;
         }
 
         public override void upgrade()
