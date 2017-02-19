@@ -22,7 +22,7 @@ namespace Zavtra
         public long costWood { get; protected set; }
         public long costStone { get; protected set; }
         public RessourceType ressource { get; protected set; }
-        public int worker { get; protected set; }
+        public int worker { get; set; }
         public int minWorker { get; protected set; }
         public int maxWorker { get; protected set; }
 

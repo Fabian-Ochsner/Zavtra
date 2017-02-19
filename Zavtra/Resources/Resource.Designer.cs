@@ -75,9 +75,6 @@ namespace Zavtra
 			// aapt resource value: 0x7f05000e
 			public const int btnContinue = 2131034126;
 			
-			// aapt resource value: 0x7f05000a
-			public const int btnDetail = 2131034122;
-			
 			// aapt resource value: 0x7f050019
 			public const int btnFarm = 2131034137;
 			
@@ -104,6 +101,9 @@ namespace Zavtra
 			
 			// aapt resource value: 0x7f05001b
 			public const int btnQuarry = 2131034139;
+			
+			// aapt resource value: 0x7f05000a
+			public const int btnRemove = 2131034122;
 			
 			// aapt resource value: 0x7f050018
 			public const int btnResidence = 2131034136;

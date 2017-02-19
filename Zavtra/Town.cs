@@ -253,7 +253,7 @@ namespace Zavtra
                     {
                         if (ressi.ressourceType == building.ressource)
                         {
-                            ressi.currentRessource += ((StructureRessource)building).output;
+                            ressi.currentRessource += (((StructureRessource)building).output / building.maxWorker) * building.worker;
                             if (ressi.currentRessource > ressi.maxRessource)
                             {
                                 ressi.currentRessource = ressi.maxRessource;

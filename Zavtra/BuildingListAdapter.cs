@@ -21,7 +21,8 @@ namespace Zavtra
         public List<Structure> mItems;
         private List<Ressource> mRessource;
         private Button btnUpgrade;
-        private Button btnDetail;
+        private Button btnRemove;
+        private Button btnAdd;
         private Context mContext;
 
         public BuildingListAdapter(Context context, List<Structure> items, List<Ressource> ressource)
@@ -59,11 +60,17 @@ namespace Zavtra
                 row = LayoutInflater.From(mContext).Inflate(Resource.Layout.DialogBuildingList_row, null, false);
             }
 
+            TextView txtWorker = row.FindViewById<TextView>(Resource.Id.txtWorker);
+            txtWorker.Text = "Arbeiter: " + mItems[position].worker + "/" + mItems[position].maxWorker;
+
             TextView txtRessource = row.FindViewById<TextView>(Resource.Id.txtRessource);
             txtRessource.Text = "Ressource: " + RessourceTypeConverter(mItems[position].ressource);
 
             TextView txtMaxOutput = row.FindViewById<TextView>(Resource.Id.txtMaxOutput);
-            //txtMaxOutput.Text = "Max. Produktion: " + mItems[position].
+            txtMaxOutput.Text = MaxOutput(mItems[position]);
+
+            TextView txtOutput = row.FindViewById<TextView>(Resource.Id.txtCurrentOutput);
+            txtOutput.Text = Output(mItems[position]);
 
             TextView txtLevel = row.FindViewById<TextView>(Resource.Id.txtLevel);
             txtLevel.Text = BuildingTypeConverter(mItems[position].building) + " Level " + mItems[position].level.ToString();
@@ -75,13 +82,13 @@ namespace Zavtra
             txtWood.Text = "Wood: " + mItems[position].costWood.ToString();
 
             btnUpgrade = row.FindViewById<Button>(Resource.Id.btnUpgrade);
-
             btnUpgrade.SetOnClickListener(new UpgradeClickListener(this.mContext, mItems, position, mRessource));
 
-            btnDetail = row.FindViewById<Button>(Resource.Id.btnDetail);
+            btnRemove = row.FindViewById<Button>(Resource.Id.btnRemove);
+            btnRemove.SetOnClickListener(new RemoveClickListener(this.mContext, mItems, position, mRessource));
 
-
-            btnDetail.SetOnClickListener(new DetailClickListener(this.mContext, mItems, position));
+            btnAdd = row.FindViewById<Button>(Resource.Id.btnAdd);
+            btnAdd.SetOnClickListener(new AddClickListener(this.mContext, mItems, position, mRessource));
 
             //NotifyDataSetChanged();
 
@@ -102,6 +109,59 @@ namespace Zavtra
 
             return row;
         }
+
+        private string MaxOutput(Structure structure)
+        {
+            string MaxOutput;
+            switch (structure.building)
+            {
+                case BuildingType.farm:
+                case BuildingType.lumberjackHut:
+                case BuildingType.quarry:
+                    MaxOutput = "Max. Produktion: " + Convert.ToString(((StructureRessource)structure).output);
+                    break;
+                case BuildingType.residence:
+                    MaxOutput = "Max. Einwohner: " + Convert.ToString(((Residence)structure).maxResident);
+                    break;
+                case BuildingType.storehouse:
+                    MaxOutput = "Max. Lagermenge: " + Convert.ToString(((Storehouse)structure).maxWood);
+                    break;
+                case BuildingType.townhall:
+                    MaxOutput = "Max. Gebäude: " + Convert.ToString(((Townhall)structure).MaxBuildings);
+                    break;
+                default:
+                    MaxOutput = "";
+                    break;
+            }
+            return MaxOutput;
+        }
+
+        private string Output(Structure structure)
+        {
+            string MaxOutput;
+            switch (structure.building)
+            {
+                case BuildingType.farm:
+                case BuildingType.lumberjackHut:
+                case BuildingType.quarry:
+                    MaxOutput = "Produktion: " + Convert.ToString((((StructureRessource)structure).output/structure.maxWorker)*structure.worker);
+                    break;
+                case BuildingType.residence:
+                    MaxOutput = "Einwohner: " + Convert.ToString(((Residence)structure).maxResident);
+                    break;
+                case BuildingType.storehouse:
+                    MaxOutput = "";
+                    break;
+                case BuildingType.townhall:
+                    MaxOutput = "Gebäude: " + Convert.ToString(((Townhall)structure).currentBuildings);
+                    break;
+                default:
+                    MaxOutput = "";
+                    break;
+            }
+            return MaxOutput;
+        }
+
 
         private string BuildingTypeConverter(BuildingType _building)
         {
@@ -252,24 +312,74 @@ namespace Zavtra
 
         }
 
-        private class DetailClickListener : Java.Lang.Object, View.IOnClickListener
+        private class RemoveClickListener : Java.Lang.Object, View.IOnClickListener
         {
             private List<Structure> mItems;
+            private List<Ressource> mRessource;
             private Context context;
             private int mPosition;
 
-            public DetailClickListener(Context context, List<Structure> Items, int position)
+            public RemoveClickListener(Context context, List<Structure> Items, int position, List<Ressource> ressource)
             {
                 this.context = context;
                 this.mPosition = position;
                 this.mItems = Items;
+                this.mRessource = ressource;
             }
             public void OnClick(View v)
             {
                 string name = (string)v.Tag;
-                string text = string.Format(name + "Detail Ansicht");
+                string text = string.Format(name + "Arbeiter entfernt");
+
+                foreach (var ress in mRessource)
+                {
+                    if (mItems[mPosition].worker > mItems[mPosition].minWorker && ress.ressourceType == RessourceType.worker)
+                    {
+                        ress.currentRessource += 1;
+                        mItems[mPosition].worker -= 1;
+                    }
+                    else
+                    {
+                        text = string.Format(name + "Entfernen nicht möglich");
+                    }
+                }
                 Toast.MakeText(this.context, text, ToastLength.Long).Show();
-                //mItems[mPosition].upgrade();
+            }
+        }
+
+
+        private class AddClickListener : Java.Lang.Object, View.IOnClickListener
+        {
+            private List<Structure> mItems;
+            private List<Ressource> mRessource;
+            private Context context;
+            private int mPosition;
+
+            public AddClickListener(Context context, List<Structure> Items, int position, List<Ressource> ressource)
+            {
+                this.context = context;
+                this.mPosition = position;
+                this.mItems = Items;
+                this.mRessource = ressource;
+            }
+            public void OnClick(View v)
+            {
+                string name = (string)v.Tag;
+                string text = string.Format(name + "Arbeiter zugewiesen");
+
+                foreach(var ress in mRessource)
+                {
+                    if (mItems[mPosition].worker < mItems[mPosition].maxWorker && ress.ressourceType == RessourceType.worker && ress.currentRessource != 0)
+                    {
+                        ress.currentRessource -= 1;
+                        mItems[mPosition].worker += 1;
+                    }
+                    else
+                    {
+                        text = string.Format(name + "Zuweisen nicht möglich");
+                    }
+                }
+                Toast.MakeText(this.context, text, ToastLength.Long).Show();
             }
         }
     }

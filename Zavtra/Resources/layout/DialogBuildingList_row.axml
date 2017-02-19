@@ -83,9 +83,9 @@
                 android:layout_width="60dp"
                 android:layout_weight="35"
                 android:layout_height="50dp"
-                android:id="@+id/btnDetail"
+                android:id="@+id/btnRemove"
                 android:textSize="16dip"
-                android:onClick="btnDetailClick" />
+                android:onClick="btnRemoveClick" />
         </LinearLayout>
         <Button
             android:text="Upgrade"
