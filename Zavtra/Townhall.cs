@@ -27,7 +27,7 @@ namespace Zavtra
             costStone = 15000;
             ressource = RessourceType.building;
             worker = 1;
-            minWorker = 1;
+            minWorker = 0;
             maxWorker = 1;
             MaxBuildings = 5;
         }

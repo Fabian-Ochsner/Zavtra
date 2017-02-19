@@ -33,7 +33,7 @@ namespace Zavtra
             costStone = 10000;
             ressource = RessourceType.storage;
             worker = 1;
-            minWorker = 1;
+            minWorker = 0;
             maxWorker = 1;
             maxFood = 30000;
             maxWood = 30000;
