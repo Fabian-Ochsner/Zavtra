@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace Zavtra
 {
@@ -42,13 +43,152 @@ namespace Zavtra
         }
 
 
-        public Town(List<Structure> _structure, List<Ressource> _ressource)
+        public Town(string json)
         {
+            string firstfour;
+            string jsonFile;
+            char splitChar =  '|';
             structures = new List<Structure>();
-            structures = _structure;
-
             ressource = new List<Ressource>();
-            ressource = _ressource;
+
+            string[] classString = json.Split(splitChar);
+            foreach(var subString in classString)
+            {
+                firstfour = subString.Substring(0, 4);
+
+                    switch (firstfour)
+                    {
+                        case "town":
+                         jsonFile = subString.Remove(0, 8);
+                        Townhall loadTown = JsonConvert.DeserializeObject<Townhall>(jsonFile);
+                        structures.Add(loadTown);
+                            break;
+                        case "farm":
+                         jsonFile = subString.Remove(0, 4);
+                        Farm loadfarm = JsonConvert.DeserializeObject<Farm>(jsonFile);
+                        structures.Add(loadfarm);
+                        break;
+                        case "quar":
+                         jsonFile = subString.Remove(0, 6);
+                        Quarry loadQuar = JsonConvert.DeserializeObject<Quarry>(jsonFile);
+                        structures.Add(loadQuar);
+                        break;
+                        case "lumb":
+                         jsonFile = subString.Remove(0, 13);
+                        LumberjackHut loadLumb = JsonConvert.DeserializeObject<LumberjackHut>(jsonFile);
+                        structures.Add(loadLumb);
+                        break;
+                        case "stor":
+                         jsonFile = subString.Remove(0, 10);
+                        Storehouse loadStor = JsonConvert.DeserializeObject<Storehouse>(jsonFile);
+                        structures.Add(loadStor);
+                        break;
+                        case "resi":
+                         jsonFile = subString.Remove(0, 9);
+                        Residence loadResi = JsonConvert.DeserializeObject<Residence>(jsonFile);
+                        structures.Add(loadResi);
+                        break;
+                        case "buil":
+                        jsonFile = subString.Remove(0, 8);
+                        Building loadBuil = JsonConvert.DeserializeObject<Building>(jsonFile);
+                        ressource.Add(loadBuil);
+                        break;
+                        case "food":
+                        jsonFile = subString.Remove(0, 4);
+                        Food loadfood = JsonConvert.DeserializeObject<Food>(jsonFile);
+                        ressource.Add(loadfood);
+                        break;
+                        case "ston":
+                        jsonFile = subString.Remove(0, 5);
+                        Stone loadSton = JsonConvert.DeserializeObject<Stone>(jsonFile);
+                        ressource.Add(loadSton);
+                        break;
+                        case "wood":
+                        jsonFile = subString.Remove(0, 4);
+                        Wood loadWood = JsonConvert.DeserializeObject<Wood>(jsonFile);
+                        ressource.Add(loadWood);
+                        break;
+                        case "work":
+                        jsonFile = subString.Remove(0, 6);
+                        Worker loadWork = JsonConvert.DeserializeObject<Worker>(jsonFile);
+                        ressource.Add(loadWork);
+                        break;
+                    }
+                }
+        }
+
+        internal string SerializeObjects()
+        {
+            bool first = true;
+            string json = "";
+            string buildup;
+            string marker = "|";
+
+            foreach(var building in structures)
+            {
+                switch (building.building)
+                {
+                    case BuildingType.farm:
+                        buildup = BuildingType.farm + JsonConvert.SerializeObject((Farm)building);
+                            break;
+                    case BuildingType.lumberjackHut:
+                        buildup = BuildingType.lumberjackHut+JsonConvert.SerializeObject((LumberjackHut)building);
+                        break;
+                    case BuildingType.quarry:
+                        buildup = BuildingType.quarry+JsonConvert.SerializeObject((Quarry)building);
+                        break;
+                    case BuildingType.residence:
+                        buildup = BuildingType.residence+JsonConvert.SerializeObject((Residence)building);
+                        break;
+                    case BuildingType.storehouse:
+                        buildup = BuildingType.storehouse+JsonConvert.SerializeObject((Storehouse)building);
+                        break;
+                    case BuildingType.townhall:
+                        buildup = BuildingType.townhall+JsonConvert.SerializeObject((Townhall)building);
+                        break;
+                    default:
+                        buildup = "";
+                        break;
+                }
+                if (!first)
+                    json += marker;
+                first = false;
+                json += buildup;
+            }
+
+            foreach (var ressi in ressource)
+            {
+                switch (ressi.ressourceType)
+                {
+                    case RessourceType.building:
+                        buildup = RessourceType.building + JsonConvert.SerializeObject((Building)ressi);
+                        break;
+                    case RessourceType.food:
+                        buildup = RessourceType.food + JsonConvert.SerializeObject((Food)ressi);
+                        break;
+                    case RessourceType.stone:
+                        buildup = RessourceType.stone + JsonConvert.SerializeObject((Stone)ressi);
+                        break;
+                    case RessourceType.wood:
+                        buildup = RessourceType.wood + JsonConvert.SerializeObject((Wood)ressi);
+                        break;
+                    case RessourceType.worker:
+                        buildup = RessourceType.worker + JsonConvert.SerializeObject((Worker)ressi);
+                        break;
+                    default:
+                        buildup = "";
+                        break;
+                }
+                if (!first)
+                    json += marker;
+                first = false;
+                json += buildup;
+            }
+
+
+
+
+            return json;
         }
 
         public void BuildStructure(BuildingType type)
@@ -216,6 +356,8 @@ namespace Zavtra
 
             }
         }
+
+
 
         internal void AddResource()
         {

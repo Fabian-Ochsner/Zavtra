@@ -12,6 +12,7 @@ using Android.Widget;
 using Newtonsoft.Json;
 using System.Timers;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Zavtra
 {
@@ -30,6 +31,7 @@ namespace Zavtra
         private Button mBtnQuarry;
         private Button mBtnLumberjack;
         private Button mBtnStorehouse;
+        private Button mBtnSave;
         private TextView mTxtFood;
         private TextView mTxtWood;
         private TextView mTxtStone;
@@ -43,6 +45,22 @@ namespace Zavtra
             base.OnCreate(savedInstanceState);
             bool _load = Intent.GetBooleanExtra("Load", false);
 
+            Town loadTown;
+
+            string json;
+            string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string filePath = Path.Combine(path, "zavtra.txt");
+            using (var file = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.Read))
+            using (var strm = new StreamReader(file))
+            {
+                json = strm.ReadToEnd();
+            }
+
+
+
+
+
+            //loadTown = JsonConvert.DeserializeObject<Town>(json);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Town);
@@ -51,7 +69,7 @@ namespace Zavtra
             //Neues dorf erstellen oder laden
             if (_load == true)
             {
-                zavtra = new Town();
+                zavtra = new Town(json);
             }
             else
             {
@@ -70,6 +88,7 @@ namespace Zavtra
             mBtnQuarry = FindViewById<Button>(Resource.Id.btnQuarry);
             mBtnLumberjack = FindViewById<Button>(Resource.Id.btnLumberjackHut);
             mBtnStorehouse = FindViewById<Button>(Resource.Id.btnStorehouse);
+            mBtnSave = FindViewById<Button>(Resource.Id.btnSave);
             mTxtFood = FindViewById<TextView>(Resource.Id.txtFood);
             mTxtWood = FindViewById<TextView>(Resource.Id.txtWood);
             mTxtStone = FindViewById<TextView>(Resource.Id.txtStone);
@@ -136,6 +155,16 @@ namespace Zavtra
             mBtnStorehouse.Click += (object sender, EventArgs e) =>
             {
                 newBuildingList(BuildingType.storehouse);
+            };
+            mBtnSave.Click += (object sender, EventArgs e) =>
+            {
+                json = zavtra.SerializeObjects();
+                using (var file = File.Open(filePath, FileMode.Create, FileAccess.Write))
+                    using (var strm = new StreamWriter(file))
+                {
+                    strm.Write(json);
+                }
+
             };
         }
 

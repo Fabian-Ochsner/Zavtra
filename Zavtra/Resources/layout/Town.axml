@@ -11,7 +11,7 @@
         p1:layout_width="match_parent"
         p1:layout_height="60dp"
         p1:layout_weight="1"
-        p1:columnCount="3"
+        p1:columnCount="4"
         p1:rowCount="2"
         p1:id="@+id/gridLayout1">
         <TextView
@@ -45,6 +45,15 @@
             p1:layout_row="1"
             p1:layout_column="2"
             p1:id="@+id/txtBuilding" />
+        <Button
+            p1:text="Save"
+            p1:layout_row="0"
+            p1:layout_rowSpan="2"
+            p1:layout_column="3"
+            p1:id="@+id/btnSave"
+            p1:layout_gravity="right"
+            p1:minWidth="105dp"
+            p1:minHeight="70dp" />
     </GridLayout>
     <LinearLayout
         p1:orientation="horizontal"
