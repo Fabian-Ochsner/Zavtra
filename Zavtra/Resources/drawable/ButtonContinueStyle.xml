@@ -5,12 +5,12 @@
       <item android:right="5dp" android:top="5dp">
         <shape>
           <corners android:radius="2dp"/>
-          <solid android:color="#D6D6D6"/>
+          <solid android:color="#82FF84"/>
         </shape>
       </item>
       <item android:bottom="2dp" android:left="2dp">
         <shape>
-          <gradient android:angle="270" android:endColor="#F57847" android:startColor="#F57847"/>
+          <gradient android:angle="270" android:endColor="#32AF34" android:startColor="#32AF34"/>
           <corners android:radius="5dp"/>
           <padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp"/>
         </shape>
@@ -24,12 +24,12 @@
       <item android:right="5dp" android:top="5dp">
         <shape>
           <corners android:radius="2dp"/>
-          <solid android:color="#D6D6D6"/>
+          <solid android:color="#82FF84"/>
         </shape>
       </item>
       <item android:bottom="2dp" android:left="2dp">
         <shape>
-          <gradient android:angle="270" android:endColor="#E67E55" android:startColor="#F57847"/>
+          <gradient android:angle="270" android:endColor="#7CC791" android:startColor="#32AF34"/>
           <corners android:radius="5dp"/>
           <padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp"/>
         </shape>

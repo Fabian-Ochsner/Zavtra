@@ -72,56 +72,56 @@ namespace Zavtra
 			// aapt resource value: 0x7f050009
 			public const int btnAdd = 2131034121;
 			
-			// aapt resource value: 0x7f05000e
-			public const int btnContinue = 2131034126;
-			
-			// aapt resource value: 0x7f050019
-			public const int btnFarm = 2131034137;
+			// aapt resource value: 0x7f05000f
+			public const int btnContinue = 2131034127;
 			
 			// aapt resource value: 0x7f05001a
-			public const int btnLumberjackHut = 2131034138;
-			
-			// aapt resource value: 0x7f050020
-			public const int btnNewFarm = 2131034144;
-			
-			// aapt resource value: 0x7f05000d
-			public const int btnNewGame = 2131034125;
-			
-			// aapt resource value: 0x7f050021
-			public const int btnNewLumberjack = 2131034145;
-			
-			// aapt resource value: 0x7f050022
-			public const int btnNewQuarry = 2131034146;
-			
-			// aapt resource value: 0x7f05001f
-			public const int btnNewResidence = 2131034143;
-			
-			// aapt resource value: 0x7f050023
-			public const int btnNewStorehouse = 2131034147;
+			public const int btnFarm = 2131034138;
 			
 			// aapt resource value: 0x7f05001b
-			public const int btnQuarry = 2131034139;
+			public const int btnLumberjackHut = 2131034139;
+			
+			// aapt resource value: 0x7f050021
+			public const int btnNewFarm = 2131034145;
+			
+			// aapt resource value: 0x7f05000e
+			public const int btnNewGame = 2131034126;
+			
+			// aapt resource value: 0x7f050022
+			public const int btnNewLumberjack = 2131034146;
+			
+			// aapt resource value: 0x7f050023
+			public const int btnNewQuarry = 2131034147;
+			
+			// aapt resource value: 0x7f050020
+			public const int btnNewResidence = 2131034144;
+			
+			// aapt resource value: 0x7f050024
+			public const int btnNewStorehouse = 2131034148;
+			
+			// aapt resource value: 0x7f05001c
+			public const int btnQuarry = 2131034140;
 			
 			// aapt resource value: 0x7f05000a
 			public const int btnRemove = 2131034122;
 			
+			// aapt resource value: 0x7f050019
+			public const int btnResidence = 2131034137;
+			
+			// aapt resource value: 0x7f050016
+			public const int btnSave = 2131034134;
+			
+			// aapt resource value: 0x7f05001d
+			public const int btnStorehouse = 2131034141;
+			
 			// aapt resource value: 0x7f050018
-			public const int btnResidence = 2131034136;
-			
-			// aapt resource value: 0x7f05000f
-			public const int btnSave = 2131034127;
-			
-			// aapt resource value: 0x7f05001c
-			public const int btnStorehouse = 2131034140;
-			
-			// aapt resource value: 0x7f050017
-			public const int btnTownhall = 2131034135;
+			public const int btnTownhall = 2131034136;
 			
 			// aapt resource value: 0x7f05000b
 			public const int btnUpgrade = 2131034123;
 			
-			// aapt resource value: 0x7f05001e
-			public const int button7 = 2131034142;
+			// aapt resource value: 0x7f05001f
+			public const int button7 = 2131034143;
 			
 			// aapt resource value: 0x7f050012
 			public const int gridLayout1 = 2131034130;
@@ -132,11 +132,11 @@ namespace Zavtra
 			// aapt resource value: 0x7f050007
 			public const int linearLayout2 = 2131034119;
 			
-			// aapt resource value: 0x7f050016
-			public const int linearLayout3 = 2131034134;
+			// aapt resource value: 0x7f050017
+			public const int linearLayout3 = 2131034135;
 			
-			// aapt resource value: 0x7f05001d
-			public const int linearLayout4 = 2131034141;
+			// aapt resource value: 0x7f05001e
+			public const int linearLayout4 = 2131034142;
 			
 			// aapt resource value: 0x7f050000
 			public const int myListView = 2131034112;
@@ -164,6 +164,9 @@ namespace Zavtra
 			
 			// aapt resource value: 0x7f050005
 			public const int txtStone = 2131034117;
+			
+			// aapt resource value: 0x7f05000d
+			public const int txtSubTitle = 2131034125;
 			
 			// aapt resource value: 0x7f050006
 			public const int txtWood = 2131034118;

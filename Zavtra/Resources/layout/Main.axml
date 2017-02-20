@@ -17,7 +17,18 @@
         android:id="@+id/txtZavtra"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="40sp" />
+        android:textSize="50sp" />
+    <TextView
+        android:text="Town of Tomorrow"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="12"
+        android:layout_height="wrap_content"
+        android:textColor="#32AF34"
+        android:id="@+id/txtSubTitle"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="30sp" />
     <Button
         android:text="New Game"
         android:layout_width="match_parent"
@@ -46,16 +57,6 @@
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="5" />
-    <Button
-        android:text="Save"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="15"
-        android:id="@+id/btnSave"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="25dp"
-        android:background="@drawable/buttoncontinuestyle" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
