@@ -48,7 +48,6 @@ namespace Zavtra
 
             View row = convertView;
 
-
             if (row == null)
             {
                 row = LayoutInflater.From(mContext).Inflate(Resource.Layout.DialogBuildingList_row, null, false);
@@ -83,23 +82,6 @@ namespace Zavtra
 
             btnAdd = row.FindViewById<Button>(Resource.Id.btnAdd);
             btnAdd.SetOnClickListener(new AddClickListener(this.mContext, mItems, position, mRessource));
-
-            //NotifyDataSetChanged();
-
-            //btnDetail.Click += delegate
-            //    {
-            //        //FragmentTransaction transaction = FragmentManager.BeginTransaction();
-            //        Console.WriteLine("building detali fragment" + mItems[position].level);
-            //    };
-
-
-
-            //btnUpgrade.Click -= delegate {};
-            //btnUpgrade.Click += delegate
-            //{
-            //    btnUpgradeClick(position);
-            //};
-
 
             return row;
         }
@@ -213,19 +195,9 @@ namespace Zavtra
         }
 
 
-        //private void HandleClick(object sender, EventArgs e)
-        //{
-        //    mItems[_position].upgrade();
-        //    this.NotifyDataSetChanged();
-        //}
-
-        //private void btnUpgradeClick(int position)
-        //{
-        //    mItems[position].upgrade();
-
-        //}
-
-
+        /// <summary>
+        /// ClickListener klasse um den Upgrade-klick im dialog fragment auszuführen
+        /// </summary>
         private class UpgradeClickListener : Java.Lang.Object, View.IOnClickListener
         {
             private List<Structure> mItems;
@@ -295,17 +267,11 @@ namespace Zavtra
                 }
                 Toast.MakeText(this.mContext, text, ToastLength.Long).Show();
             }
-
-
-
-
-
-
-
-
-
         }
 
+        /// <summary>
+        /// ClickListener klasse um den Remove-klick im dialog fragment auszuführen
+        /// </summary>
         private class RemoveClickListener : Java.Lang.Object, View.IOnClickListener
         {
             private List<Structure> mItems;
@@ -332,7 +298,7 @@ namespace Zavtra
                         ress.currentRessource += 1;
                         mItems[mPosition].worker -= 1;
                     }
-                    else
+                    else if(ress.ressourceType == RessourceType.worker)
                     {
                         text = string.Format(name + "Entfernen nicht möglich");
                     }
@@ -342,6 +308,9 @@ namespace Zavtra
         }
 
 
+        /// <summary>
+        /// ClickListener klasse um den Add-klick im dialog fragment auszuführen
+        /// </summary>
         private class AddClickListener : Java.Lang.Object, View.IOnClickListener
         {
             private List<Structure> mItems;
@@ -368,7 +337,7 @@ namespace Zavtra
                         ress.currentRessource -= 1;
                         mItems[mPosition].worker += 1;
                     }
-                    else
+                    else if (ress.ressourceType == RessourceType.worker)
                     {
                         text = string.Format(name + "Zuweisen nicht möglich");
                     }

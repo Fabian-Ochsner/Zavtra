@@ -31,15 +31,11 @@ namespace Zavtra
         private TextView mTxtWorkforce;
         private TextView mTxtBuilding;
         private bool _Timer;
-        //private Timer mTimer;
-        //int test = 300;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             bool _load = Intent.GetBooleanExtra("Load", false);
-
-            Town loadTown;
-
             string json;
             string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string filePath = Path.Combine(path, "zavtra.txt");
@@ -48,12 +44,6 @@ namespace Zavtra
             {
                 json = strm.ReadToEnd();
             }
-
-
-
-
-
-            //loadTown = JsonConvert.DeserializeObject<Town>(json);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Town);
@@ -91,14 +81,6 @@ namespace Zavtra
             //Ressourcen auf GUI initialisieren
             initRessource();
             AddTimer();
-
-            //mTimer = new Timer();
-            //mTimer.Interval = 1000;
-            //mTimer.Elapsed += OnTimedEvent;
-
-            //mTimer.Enabled = true;
-
-
 
 
             //Button click neue gebäude erstellen
@@ -172,7 +154,6 @@ namespace Zavtra
             DialogBuildingList buildingListDialog = new DialogBuildingList();
             Bundle args = new Bundle();
             args.PutInt("Type", (int)type);
-            //args.PutString("Town", JsonConvert.SerializeObject(zavtra));
             buildingListDialog.Arguments = args;
             buildingListDialog.Show(transaction, "dialog fragment");
             initRessource();
@@ -358,9 +339,7 @@ namespace Zavtra
                 {
                     await Task.Delay(TimeSpan.FromSeconds(1));
                 }
-
             }
-
         }
 
         private void RessourceUpdate()
@@ -368,17 +347,5 @@ namespace Zavtra
             zavtra.AddResource();
             initRessource();
         }
-
-
-        //public void OnTimedEvent(object sender, ElapsedEventArgs e)
-        //{
-        //    mTxtFood.Text = "Food:" + test;
-        //    test += test;
-        //    this.Recreate();
-        //}
-
-
-
-
     }
 }

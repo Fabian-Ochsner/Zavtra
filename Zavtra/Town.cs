@@ -175,10 +175,6 @@ namespace Zavtra
                 first = false;
                 json += buildup;
             }
-
-
-
-
             return json;
         }
 
@@ -215,10 +211,7 @@ namespace Zavtra
                             break;
                     }
                 }
-
-
             }
-
         }
 
 
@@ -338,10 +331,6 @@ namespace Zavtra
                         break;
                 }
             }
-
-
-
-
             foreach(var type in Enum.GetValues(typeof(RessourceType)))
             {
 

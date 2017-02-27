@@ -33,11 +33,6 @@ namespace Zavtra
             };
 
 
-            //ArrayAdapter<string> adapter = new ArrayAdapter<Structure>(this, Android.Resource.Layout.SimpleListItem1, mBuildings);
-
-           
-
-
             var view = inflater.Inflate(Resource.Layout.DiaBuildingList, container, false);
 
             mBuildingList = view.FindViewById<ListView>(Resource.Id.myListView);
@@ -45,8 +40,6 @@ namespace Zavtra
             BuildingListAdapter adapter = new BuildingListAdapter(this.Activity, mBuildings, TownActivity.zavtra.ressource);
 
             mBuildingList.Adapter = adapter;
-
-
 
 
             return view;

@@ -26,7 +26,6 @@ namespace Zavtra
             mBtnNewGame.Click += (object sender, EventArgs args) =>
             {
                 //New Game Activity 
-
                 StartActivity(typeof(TownActivity));
                 
             };
