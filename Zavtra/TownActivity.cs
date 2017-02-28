@@ -36,7 +36,7 @@ namespace Zavtra
         {
             base.OnCreate(savedInstanceState);
             bool _load = Intent.GetBooleanExtra("Load", false);
-            string json;
+            string json= null;
             string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string filePath = Path.Combine(path, "zavtra.txt");
             using (var file = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.Read))
@@ -50,7 +50,7 @@ namespace Zavtra
             // Create your application here
 
             //Neues dorf erstellen oder laden
-            if (_load == true)
+            if (_load == true && json != null)
             {
                 zavtra = new Town(json);
             }
