@@ -199,7 +199,6 @@ namespace ZavtraUnitTest
             //Assert
 
 
-
             Assert.IsTrue(currentStone == resultStone && currentWood == resultWood, "cuttentStone or currentWood != result");
         }
     }
