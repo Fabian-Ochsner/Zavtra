@@ -20,7 +20,6 @@ namespace Zavtra
 
         public override void upgrade()
         {
-            maxWorker *= ((level + 10) / 10);
             output += 10;
             costCalculator();
         }

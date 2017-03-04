@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Zavtra
 {
-    [Activity(Label = "TownActivity")]
+    [Activity(Label = "Town")]
     public class TownActivity : Activity
     {
         public static Town zavtra;

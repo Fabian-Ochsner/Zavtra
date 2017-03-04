@@ -33,9 +33,9 @@ namespace Zavtra
 
         public override void upgrade()
         {
-            maxFood *= ((level + 10) / 10);
-            maxWood *= ((level + 10) / 10);
-            maxStone *= ((level + 10) / 10);
+            maxFood = (maxFood / level) * (level + 1);
+            maxWood = (maxWood / level) * (level + 1);
+            maxStone = (maxStone / level) * (level + 1);
             costCalculator();
         }
     }

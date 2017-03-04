@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zavtra", "Zavtra\Zavtra.csproj", "{9615F5EA-05B4-4178-9563-2CFF9051CABC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9FFA0709-A919-4BED-B6CD-6AB563336675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZavtraUnitTest", "ZavtraUnitTest\ZavtraUnitTest.csproj", "{DF1BC467-A1FA-4550-BBAB-CC6B25F4DC1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +21,15 @@ Global
 		{9615F5EA-05B4-4178-9563-2CFF9051CABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9615F5EA-05B4-4178-9563-2CFF9051CABC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9615F5EA-05B4-4178-9563-2CFF9051CABC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DF1BC467-A1FA-4550-BBAB-CC6B25F4DC1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1BC467-A1FA-4550-BBAB-CC6B25F4DC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1BC467-A1FA-4550-BBAB-CC6B25F4DC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1BC467-A1FA-4550-BBAB-CC6B25F4DC1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF1BC467-A1FA-4550-BBAB-CC6B25F4DC1F} = {9FFA0709-A919-4BED-B6CD-6AB563336675}
 	EndGlobalSection
 EndGlobal

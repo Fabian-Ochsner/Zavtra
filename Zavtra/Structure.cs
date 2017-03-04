@@ -17,8 +17,8 @@ namespace Zavtra
         public abstract void upgrade();
         protected void costCalculator()
         {
-            costWood *= ((level + 10) / 10);
-            costStone *= ((level + 10) / 10);
+            costWood = (costWood / level) * (level + 1);
+            costStone = (costStone / level) * (level + 1);
             level += 1;
         }
 
